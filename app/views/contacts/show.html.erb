@@ -1,0 +1,48 @@
+<p>
+  <b>First name:</b>
+  <%=h @contact.first_name %>
+</p>
+
+<p>
+  <b>Last name:</b>
+  <%=h @contact.last_name %>
+</p>
+
+<p>
+  <b>Mob phone:</b>
+  <%=h @contact.mob_phone %>
+</p>
+
+<p>
+  <b>Land line:</b>
+  <%=h @contact.land_line %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%=h @contact.email %>
+</p>
+
+<p>
+  <b>Height:</b>
+  <%=h @contact.height %>
+</p>
+
+<p>
+  <b>Weight:</b>
+  <%=h @contact.weight %>
+</p>
+
+<p>
+  <b>Age:</b>
+  <%=h @contact.age %>
+</p>
+
+<p>
+  <b>Body type:</b>
+  <%=h @contact.body_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_contact_path(@contact) %> |
+<%= link_to 'Back', contacts_path %>

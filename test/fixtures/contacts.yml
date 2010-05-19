@@ -1,0 +1,23 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  first_name: MyString
+  last_name: MyString
+  mob_phone: MyString
+  land_line: MyString
+  email: MyString
+  height: 9.99
+  weight: 9.99
+  age: 9.99
+  body_type: MyString
+
+two:
+  first_name: MyString
+  last_name: MyString
+  mob_phone: MyString
+  land_line: MyString
+  email: MyString
+  height: 9.99
+  weight: 9.99
+  age: 9.99
+  body_type: MyString

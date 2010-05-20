@@ -1,0 +1,719 @@
+  [4;36;1mSQL (128.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#index (for 127.0.0.1 at 2010-05-19 17:37:04) [GET]
+  [4;36;1mContact Load (0.0ms)[0m   [0;1mMysql::Error: Table 'amelem_development.contacts' doesn't exist: SELECT * FROM `contacts` [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'amelem_development.contacts' doesn't exist: SELECT * FROM `contacts` ):
+  app/controllers/contacts_controller.rb:5:in `index'
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (93.9ms)
+Rendered rescues/_request_and_response (2.0ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#index (for 127.0.0.1 at 2010-05-19 17:37:10) [GET]
+  [4;35;1mContact Load (0.0ms)[0m   [0mMysql::Error: Table 'amelem_development.contacts' doesn't exist: SELECT * FROM `contacts` [0m
+
+ActiveRecord::StatementInvalid (Mysql::Error: Table 'amelem_development.contacts' doesn't exist: SELECT * FROM `contacts` ):
+  app/controllers/contacts_controller.rb:5:in `index'
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (79.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (105.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (23.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateContacts (20100517131024)
+  [4;36;1mSQL (76.0ms)[0m   [0;1mCREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `mob_phone` varchar(255), `land_line` varchar(255), `email` varchar(255), `height` decimal, `weight` decimal, `age` decimal, `body_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (5.6ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100517131024')[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `coaches`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `coaches`[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW KEYS FROM `coaches`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mdescribe `contacts`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `contacts`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `players`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `players`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `players`[0m
+  [4;36;1mSQL (19.6ms)[0m   [0;1mSHOW FIELDS FROM `players_sports`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mdescribe `players_sports`[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW KEYS FROM `players_sports`[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mSHOW FIELDS FROM `sports`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `sports`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `sports`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `tools`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `tools`[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW KEYS FROM `tools`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#index (for 127.0.0.1 at 2010-05-19 17:41:49) [GET]
+  [4;36;1mContact Load (1.4ms)[0m   [0;1mSELECT * FROM `contacts` [0m
+Rendering template within layouts/contacts
+Rendering contacts/index
+Completed in 199ms (View: 189, DB: 2) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#new (for 127.0.0.1 at 2010-05-19 17:41:52) [GET]
+  [4;35;1mContact Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+Rendering template within layouts/contacts
+Rendering contacts/new
+
+ActionView::TemplateError (undefined method `^' for "c":String) on line #3 of app/views/contacts/new.html.erb:
+1: <h1>New contact</h1>
+2: 
+3: <% form_for(@contact) do |f| %>
+4:   <%= f.error_messages %>
+5: 
+6:   <p>
+
+    (eval):2:in `form_authenticity_token'
+    app/views/contacts/new.html.erb:3
+    app/controllers/contacts_controller.rb:29:in `new'
+    <internal:prelude>:8:in `synchronize'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (114.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#index (for 127.0.0.1 at 2010-05-19 17:42:54) [GET]
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` [0m
+Rendering template within layouts/contacts
+Rendering contacts/index
+
+ActionView::TemplateError (undefined method `^' for "c":String) on line #12 of app/views/layouts/contacts.html.erb:
+9: </head>
+10: <body>
+11: 
+12: <p style="color: green"><%= flash[:notice] %></p>
+13: 
+14: <%= yield %>
+15: 
+
+    app/views/layouts/contacts.html.erb:12
+    app/controllers/contacts_controller.rb:7:in `index'
+    <internal:prelude>:8:in `synchronize'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (105.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#index (for 127.0.0.1 at 2010-05-19 17:43:49) [GET]
+  [4;36;1mContact Load (0.4ms)[0m   [0;1mSELECT * FROM `contacts` [0m
+Rendering template within layouts/contacts
+Rendering contacts/index
+Completed in 129ms (View: 123, DB: 1) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#new (for 127.0.0.1 at 2010-05-19 17:43:51) [GET]
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+Rendering template within layouts/contacts
+Rendering contacts/new
+Completed in 66ms (View: 51, DB: 1) | 200 OK [http://127.0.0.1/contacts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#create (for 127.0.0.1 at 2010-05-19 17:43:53) [POST]
+  Parameters: {"authenticity_token"=>"wSNLAtH9rzrqG/iE1vmDev5TUdcqGphb6Mk+OUY5u7M=", "contact"=>{"first_name"=>"", "last_name"=>"", "mob_phone"=>"", "land_line"=>"", "email"=>"", "height"=>"", "weight"=>"", "age"=>"", "body_type"=>""}, "commit"=>"Create"}
+  [4;36;1mContact Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (3.8ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/contacts
+Rendering contacts/new
+Completed in 48ms (View: 23, DB: 5) | 200 OK [http://127.0.0.1/contacts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#create (for 127.0.0.1 at 2010-05-19 17:44:01) [POST]
+  Parameters: {"authenticity_token"=>"wSNLAtH9rzrqG/iE1vmDev5TUdcqGphb6Mk+OUY5u7M=", "contact"=>{"first_name"=>"qw", "last_name"=>"qwqw", "mob_phone"=>"", "land_line"=>"", "email"=>"", "height"=>"+", "weight"=>"+", "age"=>"+", "body_type"=>""}, "commit"=>"Create"}
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mSQL (5.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (3.8ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/contacts
+Rendering contacts/new
+Completed in 49ms (View: 22, DB: 10) | 200 OK [http://127.0.0.1/contacts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#create (for 127.0.0.1 at 2010-05-19 17:44:25) [POST]
+  Parameters: {"authenticity_token"=>"wSNLAtH9rzrqG/iE1vmDev5TUdcqGphb6Mk+OUY5u7M=", "contact"=>{"first_name"=>"qw", "last_name"=>"qwqw", "mob_phone"=>"", "land_line"=>"", "email"=>"", "height"=>"3", "weight"=>"1", "age"=>"20", "body_type"=>""}, "commit"=>"Create"}
+  [4;36;1mContact Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mContact Create (14.9ms)[0m   [0;1mINSERT INTO `contacts` (`first_name`, `last_name`, `mob_phone`, `land_line`, `email`, `height`, `weight`, `age`, `body_type`, `created_at`, `updated_at`) VALUES('qw', 'qwqw', '', '', '', 3, 1, 20, '', '2010-05-19 15:44:25', '2010-05-19 15:44:25')[0m
+  [4;35;1mSQL (8.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/1
+Completed in 37ms (DB: 24) | 302 Found [http://127.0.0.1/contacts]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-19 17:44:25) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mContact Columns (4.7ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (31.6ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+Completed in 59ms (View: 17, DB: 36) | 200 OK [http://127.0.0.1/contacts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-19 17:44:27) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mContact Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (3.7ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 39ms (View: 26, DB: 8) | 200 OK [http://127.0.0.1/contacts/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-19 17:44:33) [PUT]
+  Parameters: {"authenticity_token"=>"wSNLAtH9rzrqG/iE1vmDev5TUdcqGphb6Mk+OUY5u7M=", "contact"=>{"first_name"=>"qw", "last_name"=>"qwqw", "mob_phone"=>"", "land_line"=>"", "email"=>"", "height"=>"3", "weight"=>"1", "age"=>"150", "body_type"=>""}, "commit"=>"Update", "id"=>"1"}
+  [4;36;1mContact Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+  [4;36;1mSQL (3.2ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mContact Update (2.1ms)[0m   [0mUPDATE `contacts` SET `age` = 150, `updated_at` = '2010-05-19 15:44:33' WHERE `id` = 1[0m
+  [4;36;1mSQL (7.7ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/1
+Completed in 40ms (DB: 17) | 302 Found [http://127.0.0.1/contacts/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-19 17:44:33) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://127.0.0.1/contacts/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-19 17:44:49) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mContact Columns (6.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.4ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 33ms (View: 17, DB: 6) | 200 OK [http://127.0.0.1/contacts/1/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-19 17:44:53) [PUT]
+  Parameters: {"authenticity_token"=>"wSNLAtH9rzrqG/iE1vmDev5TUdcqGphb6Mk+OUY5u7M=", "contact"=>{"first_name"=>"qw", "last_name"=>"qwqw", "mob_phone"=>"", "land_line"=>"", "email"=>"", "height"=>"3", "weight"=>"1", "age"=>"150s", "body_type"=>""}, "commit"=>"Update", "id"=>"1"}
+  [4;35;1mContact Columns (5.7ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+  [4;35;1mSQL (5.7ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 41ms (View: 11, DB: 12) | 200 OK [http://127.0.0.1/contacts/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-19 17:45:21) [PUT]
+  Parameters: {"authenticity_token"=>"wSNLAtH9rzrqG/iE1vmDev5TUdcqGphb6Mk+OUY5u7M=", "contact"=>{"first_name"=>"qw", "last_name"=>"qwqw", "mob_phone"=>"", "land_line"=>"", "email"=>"", "height"=>"3", "weight"=>"1", "age"=>"150s", "body_type"=>""}, "commit"=>"Update", "id"=>"1"}
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (3.8ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (6.2ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 61ms (View: 29, DB: 12) | 200 OK [http://127.0.0.1/contacts/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-19 17:45:34) [PUT]
+  Parameters: {"authenticity_token"=>"wSNLAtH9rzrqG/iE1vmDev5TUdcqGphb6Mk+OUY5u7M=", "contact"=>{"first_name"=>"qw", "last_name"=>"qwqw", "mob_phone"=>"", "land_line"=>"", "email"=>"", "height"=>"3", "weight"=>"1", "age"=>"120", "body_type"=>""}, "commit"=>"Update", "id"=>"1"}
+  [4;35;1mContact Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mContact Update (0.3ms)[0m   [0;1mUPDATE `contacts` SET `age` = 120, `updated_at` = '2010-05-19 15:45:34' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/1
+Completed in 21ms (DB: 8) | 302 Found [http://127.0.0.1/contacts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-19 17:45:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mContact Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+Completed in 13ms (View: 5, DB: 3) | 200 OK [http://127.0.0.1/contacts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-19 17:45:36) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mContact Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 31ms (View: 15, DB: 2) | 200 OK [http://127.0.0.1/contacts/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-19 17:45:43) [PUT]
+  Parameters: {"authenticity_token"=>"wSNLAtH9rzrqG/iE1vmDev5TUdcqGphb6Mk+OUY5u7M=", "contact"=>{"first_name"=>"qw", "last_name"=>"qwqw", "mob_phone"=>"", "land_line"=>"", "email"=>"", "height"=>"3", "weight"=>"1", "age"=>"150", "body_type"=>""}, "commit"=>"Update", "id"=>"1"}
+  [4;36;1mContact Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mContact Update (6.3ms)[0m   [0mUPDATE `contacts` SET `age` = 150, `updated_at` = '2010-05-19 15:45:43' WHERE `id` = 1[0m
+  [4;36;1mSQL (7.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/1
+Completed in 38ms (DB: 17) | 302 Found [http://127.0.0.1/contacts/1]
+  [4;35;1mSQL (0.4ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-19 17:45:43) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+Completed in 14ms (View: 5, DB: 2) | 200 OK [http://127.0.0.1/contacts/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-19 17:45:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.4ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 38ms (View: 19, DB: 2) | 200 OK [http://127.0.0.1/contacts/1/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-19 17:46:22) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mContact Columns (4.6ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.4ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 31ms (View: 13, DB: 5) | 200 OK [http://127.0.0.1/contacts/1/edit]
+  [4;35;1mSQL (0.9ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-19 17:46:26) [PUT]
+  Parameters: {"authenticity_token"=>"wSNLAtH9rzrqG/iE1vmDev5TUdcqGphb6Mk+OUY5u7M=", "contact"=>{"first_name"=>"qw", "last_name"=>"qwqw", "mob_phone"=>"", "land_line"=>"", "email"=>"", "height"=>"3", "weight"=>"1", "age"=>"150", "body_type"=>""}, "commit"=>"Update", "id"=>"1"}
+  [4;35;1mContact Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (2.9ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+  [4;35;1mSQL (5.7ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (2.4ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 46ms (View: 13, DB: 13) | 200 OK [http://127.0.0.1/contacts/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-19 17:46:36) [PUT]
+  Parameters: {"authenticity_token"=>"wSNLAtH9rzrqG/iE1vmDev5TUdcqGphb6Mk+OUY5u7M=", "contact"=>{"first_name"=>"qw", "last_name"=>"qwqw", "mob_phone"=>"", "land_line"=>"", "email"=>"", "height"=>"3", "weight"=>"1", "age"=>"134", "body_type"=>""}, "commit"=>"Update", "id"=>"1"}
+  [4;35;1mContact Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.4ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+  [4;35;1mSQL (5.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 97ms (View: 66, DB: 8) | 200 OK [http://127.0.0.1/contacts/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-19 17:46:45) [PUT]
+  Parameters: {"authenticity_token"=>"wSNLAtH9rzrqG/iE1vmDev5TUdcqGphb6Mk+OUY5u7M=", "contact"=>{"first_name"=>"qw", "last_name"=>"qwqw", "mob_phone"=>"", "land_line"=>"", "email"=>"", "height"=>"3", "weight"=>"1", "age"=>"112", "body_type"=>""}, "commit"=>"Update", "id"=>"1"}
+  [4;35;1mContact Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (4.9ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+  [4;35;1mSQL (3.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mContact Update (2.0ms)[0m   [0;1mUPDATE `contacts` SET `age` = 112, `updated_at` = '2010-05-19 15:46:45' WHERE `id` = 1[0m
+  [4;35;1mSQL (6.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/1
+Completed in 39ms (DB: 20) | 302 Found [http://127.0.0.1/contacts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-19 17:46:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mContact Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+Completed in 12ms (View: 5, DB: 1) | 200 OK [http://127.0.0.1/contacts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-19 17:48:49) [GET]
+  Parameters: {"id"=>"1"}
+
+SyntaxError (/home/paclik/workspace/amelem/app/models/contact.rb:4: syntax error, unexpected ':', expecting keyword_end
+  :greater_than_or_equal_to :age, :in => 18..130
+                             ^
+/home/paclik/workspace/amelem/app/models/contact.rb:4: syntax error, unexpected tASSOC, expecting tCOLON2 or '[' or '.'
+  :greater_than_or_equal_to :age, :in => 18..130
+                                        ^):
+  app/controllers/contacts_controller.rb:16:in `show'
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (127.3ms)
+Rendered rescues/_request_and_response (2.2ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-19 17:49:02) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (1.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mContact Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mContact Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+
+NoMethodError (undefined method `greater_than_or_equal_to' for #<Class:0xaf5f2f0>):
+  app/models/contact.rb:4:in `<class:Contact>'
+  app/models/contact.rb:1:in `<top (required)>'
+  app/controllers/contacts_controller.rb:16:in `show'
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (80.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-19 17:50:19) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (5.7ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mContact Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+
+NoMethodError (undefined method `greater_than_or_equal_to' for #<Class:0xaa45d04>):
+  app/models/contact.rb:4:in `<class:Contact>'
+  app/models/contact.rb:1:in `<top (required)>'
+  app/controllers/contacts_controller.rb:16:in `show'
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (83.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-19 17:50:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mContact Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mContact Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+
+NoMethodError (undefined method `greater_than_or_equal_to' for #<Class:0xb55bb2c>):
+  app/models/contact.rb:4:in `<class:Contact>'
+  app/models/contact.rb:1:in `<top (required)>'
+  app/controllers/contacts_controller.rb:16:in `show'
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (82.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-19 17:53:31) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mContact Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mContact Columns (1.2ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+
+NameError (undefined local variable or method `greater_than' for #<Class:0xad331b8>):
+  app/models/contact.rb:3:in `<class:Contact>'
+  app/models/contact.rb:1:in `<top (required)>'
+  app/controllers/contacts_controller.rb:16:in `show'
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (80.2ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-19 17:54:30) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mContact Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mSQL (2.8ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mContact Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+
+NameError (undefined local variable or method `greater_than' for #<Class:0xa579280>):
+  app/models/contact.rb:3:in `<class:Contact>'
+  app/models/contact.rb:1:in `<top (required)>'
+  app/controllers/contacts_controller.rb:16:in `show'
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (147.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-19 17:54:48) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mContact Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mSQL (4.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+
+NameError (undefined local variable or method `greater_than' for #<Class:0xaec9dc0>):
+  app/models/contact.rb:4:in `<class:Contact>'
+  app/models/contact.rb:1:in `<top (required)>'
+  app/controllers/contacts_controller.rb:16:in `show'
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (81.1ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-19 17:54:50) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mContact Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mContact Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+
+NameError (undefined local variable or method `greater_than' for #<Class:0xa952afc>):
+  app/models/contact.rb:4:in `<class:Contact>'
+  app/models/contact.rb:1:in `<top (required)>'
+  app/controllers/contacts_controller.rb:16:in `show'
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (179.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-19 17:55:06) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mContact Columns (4.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (2.7ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+Completed in 26ms (View: 10, DB: 8) | 200 OK [http://127.0.0.1/contacts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-19 17:55:09) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mContact Columns (3.2ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (4.9ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 30ms (View: 13, DB: 8) | 200 OK [http://127.0.0.1/contacts/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-19 17:55:14) [PUT]
+  Parameters: {"authenticity_token"=>"wSNLAtH9rzrqG/iE1vmDev5TUdcqGphb6Mk+OUY5u7M=", "contact"=>{"first_name"=>"qw", "last_name"=>"qwqw", "mob_phone"=>"", "land_line"=>"", "email"=>"", "height"=>"3", "weight"=>"1", "age"=>"17", "body_type"=>""}, "commit"=>"Update", "id"=>"1"}
+  [4;36;1mContact Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (7.9ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 43ms (View: 13, DB: 13) | 200 OK [http://127.0.0.1/contacts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-19 17:55:20) [PUT]
+  Parameters: {"authenticity_token"=>"wSNLAtH9rzrqG/iE1vmDev5TUdcqGphb6Mk+OUY5u7M=", "contact"=>{"first_name"=>"qw", "last_name"=>"qwqw", "mob_phone"=>"", "land_line"=>"", "email"=>"", "height"=>"3", "weight"=>"1", "age"=>"18", "body_type"=>""}, "commit"=>"Update", "id"=>"1"}
+  [4;36;1mContact Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mContact Update (1.4ms)[0m   [0mUPDATE `contacts` SET `age` = 18, `updated_at` = '2010-05-19 15:55:20' WHERE `id` = 1[0m
+  [4;36;1mSQL (5.9ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/1
+Completed in 33ms (DB: 9) | 302 Found [http://127.0.0.1/contacts/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-19 17:55:20) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mContact Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+Completed in 13ms (View: 5, DB: 1) | 200 OK [http://127.0.0.1/contacts/1]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-19 17:55:45) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (1.2ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+Completed in 29ms (View: 12, DB: 2) | 200 OK [http://127.0.0.1/contacts/1]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-19 17:55:46) [GET]
+  Parameters: {"id"=>"1"}
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 32ms (View: 18, DB: 2) | 200 OK [http://127.0.0.1/contacts/1/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-19 17:55:51) [PUT]
+  Parameters: {"authenticity_token"=>"wSNLAtH9rzrqG/iE1vmDev5TUdcqGphb6Mk+OUY5u7M=", "contact"=>{"first_name"=>"qw", "last_name"=>"qwqw", "mob_phone"=>"", "land_line"=>"", "email"=>"", "height"=>"3", "weight"=>"1", "age"=>"137", "body_type"=>""}, "commit"=>"Update", "id"=>"1"}
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (3.5ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+  [4;35;1mSQL (4.9ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (2.6ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 48ms (View: 12, DB: 12) | 200 OK [http://127.0.0.1/contacts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#index (for 127.0.0.1 at 2010-05-20 10:37:31) [GET]
+  [4;36;1mContact Load (49.2ms)[0m   [0;1mSELECT * FROM `contacts` [0m
+Rendering template within layouts/contacts
+Rendering contacts/index
+  [4;35;1mContact Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+Completed in 202ms (View: 146, DB: 50) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 10:37:34) [GET]
+  Parameters: {"id"=>"1"}
+  [4;36;1mContact Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 41ms (View: 24, DB: 1) | 200 OK [http://127.0.0.1/contacts/1/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 10:37:41) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"qw", "last_name"=>"qwqw", "mob_phone"=>"", "land_line"=>"", "email"=>"", "height"=>"3", "weight"=>"1", "age"=>"146", "body_type"=>""}, "commit"=>"Update", "id"=>"1"}
+  [4;36;1mContact Columns (2.3ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.6ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+  [4;36;1mSQL (3.3ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.3ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 51ms (View: 12, DB: 8) | 200 OK [http://127.0.0.1/contacts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 10:37:42) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"qw", "last_name"=>"qwqw", "mob_phone"=>"", "land_line"=>"", "email"=>"", "height"=>"3", "weight"=>"1", "age"=>"146", "body_type"=>""}, "commit"=>"Update", "id"=>"1"}
+  [4;36;1mContact Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 1) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 47ms (View: 18, DB: 2) | 200 OK [http://127.0.0.1/contacts/1]

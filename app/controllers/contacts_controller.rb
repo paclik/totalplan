@@ -25,7 +25,9 @@ class ContactsController < ApplicationController
   # GET /contacts/new.xml
   def new
     @contact = Contact.new
-
+    @contact.age = 0;
+    @contact.height = 0;
+    @contact.weight = 0;
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @contact }

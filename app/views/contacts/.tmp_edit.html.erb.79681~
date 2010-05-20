@@ -1,4 +1,4 @@
-<h1>New contact</h1>
+<h1>Editing contact</h1>
 
 <% form_for(@contact) do |f| %>
   <%= f.error_messages %>
@@ -37,11 +37,12 @@
   </p>
   <p>
     <%= f.label :body_type_id %><br />
-    <%=  collection_select(:contact, :body_type_id, BodyType.all, :id , :type_cz , :selected => 5)%>
+    <%=  collection_select(:contact, :body_type_id, BodyType.all, :id, :type_cz, {:prompt => true})%>
   </p>
   <p>
-    <%= f.submit 'Create' %>
+    <%= f.submit 'Update' %>
   </p>
 <% end %>
 
+<%= link_to 'Show', @contact %> |
 <%= link_to 'Back', contacts_path %>

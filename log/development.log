@@ -717,3 +717,1330 @@ Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 10:37:42) [PUT
 Rendering template within layouts/contacts
 Rendering contacts/edit
 Completed in 47ms (View: 18, DB: 2) | 200 OK [http://127.0.0.1/contacts/1]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (23.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBodyTypes (20100520091003)
+  [4;36;1mSQL (41.2ms)[0m   [0;1mCREATE TABLE `body_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type_cz` varchar(255), `type_eng` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20100520091003')[0m
+Migrating to CreateContacts (20100520091931)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'contacts' already exists: CREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `mob_phone` varchar(255), `land_line` varchar(255), `email` varchar(255), `height` decimal, `weight` decimal, `age` decimal, `body_type_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBodyTypes (20100520091003)
+Migrating to CreateContacts (20100520091931)
+  [4;36;1mSQL (0.0ms)[0m   [0;1mMysql::Error: Table 'contacts' already exists: CREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `mob_phone` varchar(255), `land_line` varchar(255), `email` varchar(255), `height` decimal, `weight` decimal, `age` decimal, `body_type_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (26.8ms)[0m   [0mCREATE TABLE `coaches` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (8.2ms)[0m   [0mCREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `mob_phone` varchar(255), `land_line` varchar(255), `email` varchar(255), `height` integer, `weight` integer, `age` integer, `body_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (8.8ms)[0m   [0mCREATE TABLE `players` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (14.0ms)[0m   [0mCREATE TABLE `players_sports` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `player_id` int(11), `sport_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (11.8ms)[0m   [0mCREATE TABLE `sports` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `coach_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (11.8ms)[0m   [0mCREATE TABLE `tools` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `sport_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (12.4ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (15.7ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100517131024')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (21.0ms)[0m   [0mCREATE TABLE `coaches` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (5.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (7.8ms)[0m   [0mCREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `mob_phone` varchar(255), `land_line` varchar(255), `email` varchar(255), `height` integer, `weight` integer, `age` integer, `body_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (8.6ms)[0m   [0mCREATE TABLE `players` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (13.8ms)[0m   [0mCREATE TABLE `players_sports` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `player_id` int(11), `sport_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (12.2ms)[0m   [0mCREATE TABLE `sports` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `coach_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (11.8ms)[0m   [0mCREATE TABLE `tools` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `sport_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (12.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (15.4ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100517131024')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (21.9ms)[0m   [0mCREATE TABLE `coaches` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (12.8ms)[0m   [0mCREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `mob_phone` varchar(255), `land_line` varchar(255), `email` varchar(255), `height` integer, `weight` integer, `age` integer, `body_type` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (8.7ms)[0m   [0mCREATE TABLE `players` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (13.4ms)[0m   [0mCREATE TABLE `players_sports` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `player_id` int(11), `sport_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (59.6ms)[0m   [0mCREATE TABLE `sports` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `description` text, `coach_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (8.6ms)[0m   [0mCREATE TABLE `tools` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `name` varchar(255), `sport_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (14.3ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (15.1ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM `schema_migrations`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mINSERT INTO `schema_migrations` (version) VALUES ('20100517131024')[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (23.0ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (10.5ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateBodyTypes (20100520091003)
+  [4;35;1mSQL (8.0ms)[0m   [0mCREATE TABLE `body_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type_cz` varchar(255), `type_eng` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100520091003')[0m
+Migrating to CreateContacts (20100520091931)
+  [4;35;1mSQL (16.1ms)[0m   [0mCREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `mob_phone` varchar(255), `land_line` varchar(255), `email` varchar(255), `height` decimal, `weight` decimal, `age` decimal, `body_type_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100520091931')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (2.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (19.0ms)[0m   [0;1mSHOW FIELDS FROM `body_types`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `body_types`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `body_types`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `contacts`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `contacts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#index (for 127.0.0.1 at 2010-05-20 11:59:32) [GET]
+  [4;36;1mContact Load (0.4ms)[0m   [0;1mSELECT * FROM `contacts` [0m
+Rendering template within layouts/contacts
+Rendering contacts/index
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+Completed in 146ms (View: 76, DB: 2) | 200 OK [http://127.0.0.1/]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 11:59:38) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+Completed in 40ms (View: 24, DB: 2) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 11:59:45) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 51ms (View: 34, DB: 1) | 200 OK [http://127.0.0.1/contacts/298486374/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 11:59:50) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"MyString", "last_name"=>"MyString", "mob_phone"=>"MyString", "land_line"=>"MyString", "email"=>"MyString", "height"=>"10", "weight"=>"10", "age"=>"10", "body_type_id"=>"2"}, "commit"=>"Update", "id"=>"298486374"}
+  [4;36;1mContact Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 27ms (View: 14, DB: 2) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 12:00:01) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"MyString", "last_name"=>"MyString", "mob_phone"=>"MyString", "land_line"=>"MyString", "email"=>"MyString", "height"=>"10", "weight"=>"10", "age"=>"123", "body_type_id"=>"2"}, "commit"=>"Update", "id"=>"298486374"}
+  [4;36;1mContact Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+  [4;36;1mSQL (2.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mContact Update (0.6ms)[0m   [0mUPDATE `contacts` SET `age` = 123, `body_type_id` = 2, `updated_at` = '2010-05-20 10:00:01' WHERE `id` = 298486374[0m
+  [4;36;1mSQL (8.2ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/298486374
+Completed in 42ms (DB: 14) | 302 Found [http://127.0.0.1/contacts/298486374]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:00:01) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (13.3ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (2.1ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+Completed in 34ms (View: 9, DB: 16) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:01:10) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+Completed in 25ms (View: 10, DB: 2) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 12:01:13) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (4.4ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 34ms (View: 19, DB: 5) | 200 OK [http://127.0.0.1/contacts/298486374/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:01:15) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (2.7ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+Completed in 30ms (View: 12, DB: 5) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 12:01:28) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (3.7ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 35ms (View: 17, DB: 4) | 200 OK [http://127.0.0.1/contacts/298486374/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 12:01:29) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"MyString", "last_name"=>"MyString", "mob_phone"=>"MyString", "land_line"=>"MyString", "email"=>"MyString", "height"=>"10", "weight"=>"10", "age"=>"123", "body_type_id"=>"2"}, "commit"=>"Update", "id"=>"298486374"}
+  [4;35;1mContact Columns (5.3ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/298486374
+Completed in 29ms (DB: 8) | 302 Found [http://127.0.0.1/contacts/298486374]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:01:29) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+Completed in 15ms (View: 8, DB: 1) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 12:01:31) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 18ms (View: 11, DB: 1) | 200 OK [http://127.0.0.1/contacts/298486374/edit]
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 12:01:41) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"MyString", "last_name"=>"MyString", "mob_phone"=>"MyString", "land_line"=>"MyString", "email"=>"MyString", "height"=>"10", "weight"=>"10", "age"=>"123", "body_type_id"=>"2"}, "commit"=>"Update", "id"=>"298486374"}
+  [4;35;1mContact Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (2.1ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/298486374
+Completed in 28ms (DB: 7) | 302 Found [http://127.0.0.1/contacts/298486374]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:01:41) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;35;1mBodyType Load (0.0ms)[0m   [0mMysql::Error: Unknown column 'body_types.contact_id' in 'where clause': SELECT * FROM `body_types` WHERE (`body_types`.contact_id = 298486374) LIMIT 1[0m
+
+ActionView::TemplateError (Mysql::Error: Unknown column 'body_types.contact_id' in 'where clause': SELECT * FROM `body_types` WHERE (`body_types`.contact_id = 298486374)  LIMIT 1) on line #43 of app/views/contacts/show.html.erb:
+40: 
+41: <p>
+42:   <b>Body type:</b>
+43:   <%=h @contact.body_type.type_cz %>
+44: </p>
+45: 
+46: 
+
+    app/views/contacts/show.html.erb:43
+    app/controllers/contacts_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (196.9ms)
+Rendered rescues/_request_and_response (1.9ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:01:58) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (5.9ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.4ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+
+ActionView::TemplateError (undefined method `type_cz' for #<Contact:0xabedc3c>) on line #43 of app/views/contacts/show.html.erb:
+40: 
+41: <p>
+42:   <b>Body type:</b>
+43:   <%=h @contact.type_cz %>
+44: </p>
+45: 
+46: 
+
+    app/views/contacts/show.html.erb:43
+    app/controllers/contacts_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (116.4ms)
+Rendered rescues/_request_and_response (0.5ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (4.7ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:04:43) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.4ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;36;1mBodyType Load (0.0ms)[0m   [0;1mMysql::Error: Unknown column 'body_types.contact_id' in 'where clause': SELECT * FROM `body_types` WHERE (`body_types`.contact_id = 298486374) LIMIT 1[0m
+
+ActionView::TemplateError (Mysql::Error: Unknown column 'body_types.contact_id' in 'where clause': SELECT * FROM `body_types` WHERE (`body_types`.contact_id = 298486374)  LIMIT 1) on line #43 of app/views/contacts/show.html.erb:
+40: 
+41: <p>
+42:   <b>Body type:</b>
+43:   <%=h @contact.body_type.type_cz %>
+44: </p>
+45: 
+46: 
+
+    app/views/contacts/show.html.erb:43
+    app/controllers/contacts_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (123.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (2.7ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:05:32) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+
+ActionView::TemplateError (undefined method `type_cz' for #<Contact:0xa87b3d0>) on line #43 of app/views/contacts/show.html.erb:
+40: 
+41: <p>
+42:   <b>Body type:</b>
+43:   <%=h @contact.type_cz %>
+44: </p>
+45: 
+46: 
+
+    app/views/contacts/show.html.erb:43
+    app/controllers/contacts_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (174.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (23.5ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (9.3ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateBodyTypes (20100520091003)
+  [4;35;1mSQL (7.4ms)[0m   [0mCREATE TABLE `body_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type_cz` varchar(255), `type_eng` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100520091003')[0m
+Migrating to CreateContacts (20100520091931)
+  [4;35;1mSQL (8.1ms)[0m   [0mCREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `mob_phone` varchar(255), `land_line` varchar(255), `email` varchar(255), `height` decimal, `weight` decimal, `age` decimal, `body_type_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100520091931')[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_types`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `body_types`[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW KEYS FROM `body_types`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `contacts`[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW KEYS FROM `contacts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:16:07) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (5.6ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (2.8ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+
+ActionView::TemplateError (undefined method `type_cz' for #<Contact:0xae6d578>) on line #43 of app/views/contacts/show.html.erb:
+40: 
+41: <p>
+42:   <b>Body type:</b>
+43:   <%=h @contact.type_cz %>
+44: </p>
+45: 
+46: 
+
+    app/views/contacts/show.html.erb:43
+    app/controllers/contacts_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (101.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 12:16:12) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"MyString", "last_name"=>"MyString", "mob_phone"=>"MyString", "land_line"=>"MyString", "email"=>"MyString", "height"=>"10", "weight"=>"10", "age"=>"123", "body_type_id"=>"2"}, "commit"=>"Update", "id"=>"298486374"}
+  [4;35;1mContact Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (1.1ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+  [4;35;1mSQL (2.8ms)[0m   [0mBEGIN[0m
+  [4;36;1mContact Update (1.0ms)[0m   [0;1mUPDATE `contacts` SET `age` = 123, `body_type_id` = 2, `updated_at` = '2010-05-20 10:16:12' WHERE `id` = 298486374[0m
+  [4;35;1mSQL (5.5ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/298486374
+Completed in 39ms (DB: 13) | 302 Found [http://127.0.0.1/contacts/298486374]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:16:12) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+
+ActionView::TemplateError (undefined method `type_cz' for #<Contact:0xaee9d30>) on line #43 of app/views/contacts/show.html.erb:
+40: 
+41: <p>
+42:   <b>Body type:</b>
+43:   <%=h @contact.type_cz %>
+44: </p>
+45: 
+46: 
+
+    app/views/contacts/show.html.erb:43
+    app/controllers/contacts_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (124.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:17:04) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;36;1mBodyType Load (0.0ms)[0m   [0;1mMysql::Error: Unknown column 'body_types.contact_id' in 'where clause': SELECT * FROM `body_types` WHERE (`body_types`.contact_id = 298486374) LIMIT 1[0m
+
+ActionView::TemplateError (Mysql::Error: Unknown column 'body_types.contact_id' in 'where clause': SELECT * FROM `body_types` WHERE (`body_types`.contact_id = 298486374)  LIMIT 1) on line #43 of app/views/contacts/show.html.erb:
+40: 
+41: <p>
+42:   <b>Body type:</b>
+43:   <%=h @contact.body_type.type_cz %>
+44: </p>
+45: 
+46: 
+
+    app/views/contacts/show.html.erb:43
+    app/controllers/contacts_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (205.9ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:17:26) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+
+ActionView::TemplateError (undefined method `body_types' for #<Contact:0xaf5600c>) on line #43 of app/views/contacts/show.html.erb:
+40: 
+41: <p>
+42:   <b>Body type:</b>
+43:   <%=h @contact.body_types.type_cz %>
+44: </p>
+45: 
+46: 
+
+    app/views/contacts/show.html.erb:43
+    app/controllers/contacts_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (100.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:17:48) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (1.5ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;35;1mBodyType Load (0.0ms)[0m   [0mMysql::Error: Unknown column 'body_types.contact_id' in 'where clause': SELECT * FROM `body_types` WHERE (`body_types`.contact_id = 298486374) LIMIT 1[0m
+
+ActionView::TemplateError (Mysql::Error: Unknown column 'body_types.contact_id' in 'where clause': SELECT * FROM `body_types` WHERE (`body_types`.contact_id = 298486374)  LIMIT 1) on line #43 of app/views/contacts/show.html.erb:
+40: 
+41: <p>
+42:   <b>Body type:</b>
+43:   <%=h @contact.body_type.type_cz %>
+44: </p>
+45: 
+46: 
+
+    app/views/contacts/show.html.erb:43
+    app/controllers/contacts_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (137.8ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:17:59) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (3.9ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.4ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;36;1mBodyType Load (0.0ms)[0m   [0;1mMysql::Error: Unknown column 'body_types.contact_id' in 'where clause': SELECT * FROM `body_types` WHERE (`body_types`.contact_id = 298486374) LIMIT 1[0m
+
+ActionView::TemplateError (Mysql::Error: Unknown column 'body_types.contact_id' in 'where clause': SELECT * FROM `body_types` WHERE (`body_types`.contact_id = 298486374)  LIMIT 1) on line #43 of app/views/contacts/show.html.erb:
+40: 
+41: <p>
+42:   <b>Body type:</b>
+43:   <%=h @contact.body_type.type_cz %>
+44: </p>
+45: 
+46: 
+
+    app/views/contacts/show.html.erb:43
+    app/controllers/contacts_controller.rb:18:in `show'
+    <internal:prelude>:8:in `synchronize'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (197.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:22:18) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.5ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;35;1mBodyType Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `body_types`[0m
+  [4;36;1mBodyType Load (0.3ms)[0m   [0;1mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 2) [0m
+Completed in 30ms (View: 14, DB: 5) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (81.6ms)[0m   [0mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [4;36;1mSQL (9.7ms)[0m   [0;1mCREATE UNIQUE INDEX `unique_schema_migrations` ON `schema_migrations` (`version`)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+Migrating to CreateBodyTypes (20100520091003)
+  [4;35;1mSQL (8.9ms)[0m   [0mCREATE TABLE `body_types` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `type_cz` varchar(255), `type_eng` varchar(255), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100520091003')[0m
+Migrating to CreateContacts (20100520091931)
+  [4;35;1mSQL (17.6ms)[0m   [0mCREATE TABLE `contacts` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `first_name` varchar(255), `last_name` varchar(255), `mob_phone` varchar(255), `land_line` varchar(255), `email` varchar(255), `height` decimal, `weight` decimal, `age` decimal, `body_type_id` int(11), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100520091931')[0m
+  [4;35;1mSQL (3.1ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_types`[0m
+  [4;35;1mSQL (5.4ms)[0m   [0mdescribe `body_types`[0m
+  [4;36;1mSQL (4.9ms)[0m   [0;1mSHOW KEYS FROM `body_types`[0m
+  [4;35;1mSQL (1.1ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mdescribe `contacts`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `contacts`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:24:20) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (1.6ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Contact with ID=298486374):
+  app/controllers/contacts_controller.rb:16:in `show'
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (72.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:24:50) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (1.9ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;35;1mBodyType Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `body_types`[0m
+  [4;36;1mBodyType Load (0.3ms)[0m   [0;1mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 1) [0m
+Completed in 35ms (View: 16, DB: 6) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;35;1mSQL (1.0ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 12:24:53) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (7.8ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 31ms (View: 17, DB: 9) | 200 OK [http://127.0.0.1/contacts/298486374/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 12:24:58) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"MyString", "last_name"=>"MyString", "mob_phone"=>"MyString", "land_line"=>"MyString", "email"=>"MyString", "height"=>"10", "weight"=>"10", "age"=>"10", "body_type_id"=>"4"}, "commit"=>"Update", "id"=>"298486374"}
+  [4;35;1mContact Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mROLLBACK[0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 118ms (View: 14, DB: 2) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 12:25:05) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"MyString", "last_name"=>"MyString", "mob_phone"=>"MyString", "land_line"=>"MyString", "email"=>"MyString", "height"=>"10", "weight"=>"10", "age"=>"24", "body_type_id"=>"4"}, "commit"=>"Update", "id"=>"298486374"}
+  [4;35;1mContact Columns (5.1ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+  [4;35;1mSQL (0.3ms)[0m   [0mBEGIN[0m
+  [4;36;1mContact Update (3.7ms)[0m   [0;1mUPDATE `contacts` SET `age` = 24, `body_type_id` = 4, `updated_at` = '2010-05-20 10:25:05' WHERE `id` = 298486374[0m
+  [4;35;1mSQL (8.1ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/298486374
+Completed in 43ms (DB: 18) | 302 Found [http://127.0.0.1/contacts/298486374]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:25:06) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;36;1mBodyType Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_types`[0m
+  [4;35;1mBodyType Load (0.2ms)[0m   [0mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 4) [0m
+Completed in 35ms (View: 13, DB: 2) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 12:25:25) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (6.6ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 42ms (View: 14, DB: 7) | 200 OK [http://127.0.0.1/contacts/298486374/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 12:25:27) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"MyString", "last_name"=>"MyString", "mob_phone"=>"MyString", "land_line"=>"MyString", "email"=>"MyString", "height"=>"10", "weight"=>"10", "age"=>"24", "body_type_id"=>"4"}, "commit"=>"Update", "id"=>"298486374"}
+  [4;36;1mContact Columns (4.1ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+  [4;36;1mSQL (3.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.7ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/298486374
+Completed in 31ms (DB: 10) | 302 Found [http://127.0.0.1/contacts/298486374]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:25:27) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;36;1mBodyType Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `body_types`[0m
+  [4;35;1mBodyType Load (0.2ms)[0m   [0mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 4) [0m
+Completed in 21ms (View: 12, DB: 2) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 12:25:29) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (6.1ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (3.6ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 34ms (View: 16, DB: 10) | 200 OK [http://127.0.0.1/contacts/298486374/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 12:25:32) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"MyString", "last_name"=>"MyString", "mob_phone"=>"MyString", "land_line"=>"MyString", "email"=>"MyString", "height"=>"10", "weight"=>"10", "age"=>"24", "body_type_id"=>"4"}, "commit"=>"Update", "id"=>"298486374"}
+  [4;36;1mContact Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (4.6ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/298486374
+Completed in 31ms (DB: 9) | 302 Found [http://127.0.0.1/contacts/298486374]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:25:32) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;36;1mBodyType Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_types`[0m
+  [4;35;1mBodyType Load (0.2ms)[0m   [0mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 4) [0m
+Completed in 22ms (View: 11, DB: 2) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 12:25:34) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 18ms (View: 10, DB: 2) | 200 OK [http://127.0.0.1/contacts/298486374/edit]
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 12:25:45) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"MyString", "last_name"=>"MyString", "mob_phone"=>"MyString", "land_line"=>"MyString", "email"=>"MyString", "height"=>"10", "weight"=>"10", "age"=>"150", "body_type_id"=>"4"}, "commit"=>"Update", "id"=>"298486374"}
+  [4;36;1mContact Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (2.1ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mROLLBACK[0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+Completed in 50ms (View: 20, DB: 5) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 12:28:01) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"MyString", "last_name"=>"MyString", "mob_phone"=>"MyString", "land_line"=>"MyString", "email"=>"MyString", "height"=>"10", "weight"=>"10", "age"=>"150", "body_type_id"=>"4"}, "commit"=>"Update", "id"=>"298486374"}
+  [4;36;1mContact Columns (6.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Contact with ID=298486374):
+  app/controllers/contacts_controller.rb:60:in `update'
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (153.2ms)
+Rendered rescues/_request_and_response (0.7ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#index (for 127.0.0.1 at 2010-05-20 12:28:09) [GET]
+  [4;36;1mContact Load (4.9ms)[0m   [0;1mSELECT * FROM `contacts` [0m
+Rendering template within layouts/contacts
+Rendering contacts/index
+Completed in 20ms (View: 2, DB: 5) | 200 OK [http://127.0.0.1/]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#new (for 127.0.0.1 at 2010-05-20 12:28:10) [GET]
+  [4;35;1mContact Columns (3.7ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+Rendering template within layouts/contacts
+Rendering contacts/new
+Completed in 45ms (View: 31, DB: 4) | 200 OK [http://127.0.0.1/contacts/new]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#new (for 127.0.0.1 at 2010-05-20 12:28:30) [GET]
+  [4;36;1mContact Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+Rendering template within layouts/contacts
+Rendering contacts/new
+Completed in 29ms (View: 17, DB: 2) | 200 OK [http://127.0.0.1/contacts/new]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#index (for 127.0.0.1 at 2010-05-20 12:28:34) [GET]
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` [0m
+Rendering template within layouts/contacts
+Rendering contacts/index
+  [4;36;1mContact Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+Completed in 17ms (View: 9, DB: 3) | 200 OK [http://127.0.0.1/contacts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:28:41) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;35;1mBodyType Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `body_types`[0m
+  [4;36;1mBodyType Load (0.2ms)[0m   [0;1mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 3) [0m
+Completed in 37ms (View: 20, DB: 2) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#index (for 127.0.0.1 at 2010-05-20 12:28:53) [GET]
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` [0m
+Rendering template within layouts/contacts
+Rendering contacts/index
+  [4;36;1mContact Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+Completed in 29ms (View: 14, DB: 1) | 200 OK [http://127.0.0.1/contacts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#index (for 127.0.0.1 at 2010-05-20 12:29:25) [GET]
+  [4;35;1mContact Load (4.4ms)[0m   [0mSELECT * FROM `contacts` [0m
+Rendering template within layouts/contacts
+Rendering contacts/index
+  [4;36;1mContact Columns (1.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+
+ActionView::TemplateError (undefined method `body_type' for nil:NilClass) on line #26 of app/views/contacts/index.html.erb:
+23:     <td><%=h contact.height %></td>
+24:     <td><%=h contact.weight %></td>
+25:     <td><%=h contact.age %></td>
+26:     <td><%=h @contact.body_type.type_cz %></td>
+27:     <td><%= link_to 'Show', contact %></td>
+28:     <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+29:     <td><%= link_to 'Destroy', contact, :confirm => 'Are you sure?', :method => :delete %></td>
+
+    app/views/contacts/index.html.erb:26:in `block in _run_erb_app47views47contacts47index46html46erb'
+    app/views/contacts/index.html.erb:16:in `each'
+    app/views/contacts/index.html.erb:16
+    app/controllers/contacts_controller.rb:7:in `index'
+    <internal:prelude>:8:in `synchronize'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (118.6ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (1.7ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#index (for 127.0.0.1 at 2010-05-20 12:29:56) [GET]
+  [4;35;1mContact Load (0.4ms)[0m   [0mSELECT * FROM `contacts` [0m
+Rendering template within layouts/contacts
+Rendering contacts/index
+  [4;36;1mContact Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mBodyType Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `body_types`[0m
+  [4;36;1mBodyType Load (0.2ms)[0m   [0;1mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 3) [0m
+  [4;35;1mBodyType Load (0.4ms)[0m   [0mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 1) [0m
+Completed in 120ms (View: 29, DB: 5) | 200 OK [http://127.0.0.1/contacts]
+  [4;36;1mSQL (1.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#index (for 127.0.0.1 at 2010-05-20 12:32:51) [GET]
+  [4;36;1mContact Load (4.0ms)[0m   [0;1mSELECT * FROM `contacts` [0m
+Rendering template within layouts/contacts
+Rendering contacts/index
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mBodyType Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_types`[0m
+  [4;35;1mBodyType Load (1.6ms)[0m   [0mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 3) [0m
+  [4;36;1mBodyType Load (0.3ms)[0m   [0;1mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 1) [0m
+Completed in 36ms (View: 18, DB: 9) | 200 OK [http://127.0.0.1/contacts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 12:32:54) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (11.1ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+
+ActionView::TemplateError (Expected /home/paclik/workspace/amelem/app/models/body_type.rb to define Body_type) on line #41 of app/views/contacts/edit.html.erb:
+38:   <p>
+39:     <%= f.label :body_type_id %><br />
+40:     <%= f.text_field :body_type_id %>
+41: 	<%=  collection_select(:contact, :body_type_id, Body_type.all, :id, :type_cz, {:prompt => true})%>
+42:   </p>
+43:   <p>
+44:     <%= f.submit 'Update' %>
+
+    app/views/contacts/edit.html.erb:41:in `block in _run_erb_app47views47contacts47edit46html46erb'
+    app/views/contacts/edit.html.erb:3
+    <internal:prelude>:8:in `synchronize'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (106.4ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 12:33:04) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (4.5ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+
+ActionView::TemplateError (undefined local variable or method `body_type' for #<ActionView::Base:0xa5cfbd8>) on line #41 of app/views/contacts/edit.html.erb:
+38:   <p>
+39:     <%= f.label :body_type_id %><br />
+40:     <%= f.text_field :body_type_id %>
+41: 	<%=  collection_select(:contact, :body_type_id, body_type.all, :id, :type_cz, {:prompt => true})%>
+42:   </p>
+43:   <p>
+44:     <%= f.submit 'Update' %>
+
+    app/views/contacts/edit.html.erb:41:in `block in _run_erb_app47views47contacts47edit46html46erb'
+    app/views/contacts/edit.html.erb:3
+    <internal:prelude>:8:in `synchronize'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+    /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+    /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (91.2ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 12:33:54) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+  [4;35;1mBodyType Load (0.3ms)[0m   [0mSELECT * FROM `body_types` [0m
+  [4;36;1mBodyType Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `body_types`[0m
+Completed in 55ms (View: 37, DB: 2) | 200 OK [http://127.0.0.1/contacts/298486374/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 12:33:58) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"MyString", "last_name"=>"MyString", "mob_phone"=>"MyString", "land_line"=>"MyString", "email"=>"MyString", "height"=>"160", "weight"=>"65", "age"=>"20", "body_type_id"=>"2"}, "commit"=>"Update", "id"=>"298486374"}
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (3.5ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mContact Update (4.1ms)[0m   [0;1mUPDATE `contacts` SET `body_type_id` = 2, `updated_at` = '2010-05-20 10:33:58' WHERE `id` = 298486374[0m
+  [4;35;1mSQL (43.2ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/298486374
+Completed in 78ms (DB: 52) | 302 Found [http://127.0.0.1/contacts/298486374]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:33:58) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;36;1mBodyType Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `body_types`[0m
+  [4;35;1mBodyType Load (0.2ms)[0m   [0mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 2) [0m
+Completed in 36ms (View: 12, DB: 3) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 12:34:00) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (1.1ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+  [4;36;1mBodyType Load (0.3ms)[0m   [0;1mSELECT * FROM `body_types` [0m
+  [4;35;1mBodyType Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_types`[0m
+Completed in 35ms (View: 23, DB: 3) | 200 OK [http://127.0.0.1/contacts/298486374/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 12:34:04) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"MyString", "last_name"=>"MyString", "mob_phone"=>"MyString", "land_line"=>"MyString", "email"=>"MyString", "height"=>"160", "weight"=>"65", "age"=>"20", "body_type_id"=>"4"}, "commit"=>"Update", "id"=>"298486374"}
+  [4;36;1mContact Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (1.5ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+  [4;36;1mSQL (4.6ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mContact Update (1.5ms)[0m   [0mUPDATE `contacts` SET `body_type_id` = 4, `updated_at` = '2010-05-20 10:34:04' WHERE `id` = 298486374[0m
+  [4;36;1mSQL (6.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/298486374
+Completed in 39ms (DB: 17) | 302 Found [http://127.0.0.1/contacts/298486374]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:34:04) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.4ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;35;1mBodyType Columns (3.8ms)[0m   [0mSHOW FIELDS FROM `body_types`[0m
+  [4;36;1mBodyType Load (0.3ms)[0m   [0;1mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 4) [0m
+Completed in 40ms (View: 13, DB: 6) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 12:34:13) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (3.6ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+  [4;35;1mBodyType Load (0.3ms)[0m   [0mSELECT * FROM `body_types` [0m
+  [4;36;1mBodyType Columns (0.8ms)[0m   [0;1mSHOW FIELDS FROM `body_types`[0m
+Completed in 47ms (View: 29, DB: 6) | 200 OK [http://127.0.0.1/contacts/298486374/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 12:34:28) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (4.6ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+  [4;35;1mBodyType Load (0.3ms)[0m   [0mSELECT * FROM `body_types` [0m
+  [4;36;1mBodyType Columns (0.6ms)[0m   [0;1mSHOW FIELDS FROM `body_types`[0m
+Completed in 52ms (View: 37, DB: 6) | 200 OK [http://127.0.0.1/contacts/298486374/edit]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 12:34:46) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"MyString", "last_name"=>"MyString", "mob_phone"=>"MyString", "land_line"=>"MyString", "email"=>"", "height"=>"160", "weight"=>"65", "age"=>"20", "body_type_id"=>"4"}, "commit"=>"Update", "id"=>"298486374"}
+  [4;35;1mContact Columns (1.1ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (3.4ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+  [4;35;1mSQL (5.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mContact Update (0.4ms)[0m   [0;1mUPDATE `contacts` SET `email` = '', `updated_at` = '2010-05-20 10:34:46' WHERE `id` = 298486374[0m
+  [4;35;1mSQL (6.0ms)[0m   [0mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/298486374
+Completed in 39ms (DB: 17) | 302 Found [http://127.0.0.1/contacts/298486374]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 12:34:46) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (1.4ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;36;1mBodyType Columns (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_types`[0m
+  [4;35;1mBodyType Load (1.0ms)[0m   [0mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 4) [0m
+Completed in 28ms (View: 10, DB: 6) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 12:34:48) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (3.0ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+  [4;36;1mBodyType Load (0.3ms)[0m   [0;1mSELECT * FROM `body_types` [0m
+  [4;35;1mBodyType Columns (0.6ms)[0m   [0mSHOW FIELDS FROM `body_types`[0m
+Completed in 40ms (View: 20, DB: 5) | 200 OK [http://127.0.0.1/contacts/298486374/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBodyTypes (20100520091003)
+Migrating to CreateContacts (20100520091931)
+Migrating to BodyTypesAddColumns (20100520104407)
+  [4;36;1mSQL (93.6ms)[0m   [0;1mALTER TABLE `body_types` ADD `type_expl_cz` varchar(255) DEFAULT ''[0m
+  [4;35;1mSQL (17.5ms)[0m   [0mALTER TABLE `body_types` ADD `type_expl_en` varchar(255) DEFAULT ''[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100520104407')[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_types`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `body_types`[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mSHOW KEYS FROM `body_types`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `contacts`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `contacts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to BodyTypesAddColumns (20100520104407)
+  [4;36;1mSQL (62.7ms)[0m   [0;1mALTER TABLE `body_types` DROP `type_expl_cz`[0m
+  [4;35;1mSQL (10.1ms)[0m   [0mALTER TABLE `body_types` DROP `type_expl_en`[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100520104407'[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.8ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW FIELDS FROM `body_types`[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mdescribe `body_types`[0m
+  [4;36;1mSQL (1.5ms)[0m   [0;1mSHOW KEYS FROM `body_types`[0m
+  [4;35;1mSQL (2.5ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mSQL (1.1ms)[0m   [0;1mdescribe `contacts`[0m
+  [4;35;1mSQL (1.4ms)[0m   [0mSHOW KEYS FROM `contacts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBodyTypes (20100520091003)
+Migrating to CreateContacts (20100520091931)
+Migrating to BodyTypesAddColumns (20100520104407)
+  [4;36;1mSQL (29.9ms)[0m   [0;1mALTER TABLE `body_types` ADD `type_expl_cz` varchar(255) DEFAULT ''[0m
+  [4;35;1mSQL (12.4ms)[0m   [0mALTER TABLE `body_types` ADD `type_expl_en` varchar(255) DEFAULT ''[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100520104407')[0m
+  [4;35;1mSQL (5.0ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mSHOW FIELDS FROM `body_types`[0m
+  [4;35;1mSQL (0.6ms)[0m   [0mdescribe `body_types`[0m
+  [4;36;1mSQL (4.3ms)[0m   [0;1mSHOW KEYS FROM `body_types`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mSQL (0.7ms)[0m   [0;1mdescribe `contacts`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `contacts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#edit (for 127.0.0.1 at 2010-05-20 13:01:06) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;36;1mContact Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (2.7ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/edit
+  [4;36;1mBodyType Load (0.4ms)[0m   [0;1mSELECT * FROM `body_types` [0m
+  [4;35;1mBodyType Columns (0.7ms)[0m   [0mSHOW FIELDS FROM `body_types`[0m
+Completed in 42ms (View: 20, DB: 6) | 200 OK [http://127.0.0.1/contacts/298486374/edit]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#update (for 127.0.0.1 at 2010-05-20 13:01:09) [PUT]
+  Parameters: {"authenticity_token"=>"QEeU7JbPM5smSHHvlXs9+3Ovy8Fj0Z0FHfsE6EiGzqA=", "contact"=>{"first_name"=>"MyString", "last_name"=>"MyString", "mob_phone"=>"MyString", "land_line"=>"MyString", "email"=>"MyString", "height"=>"160", "weight"=>"65", "age"=>"20", "body_type_id"=>"2"}, "commit"=>"Update", "id"=>"298486374"}
+  [4;36;1mContact Columns (5.4ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mContact Update (0.3ms)[0m   [0mUPDATE `contacts` SET `body_type_id` = 2, `updated_at` = '2010-05-20 11:01:09' WHERE `id` = 298486374[0m
+  [4;36;1mSQL (6.5ms)[0m   [0;1mCOMMIT[0m
+Redirected to http://127.0.0.1:3001/contacts/298486374
+Completed in 36ms (DB: 14) | 302 Found [http://127.0.0.1/contacts/298486374]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 13:01:09) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.4ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;35;1mBodyType Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `body_types`[0m
+  [4;36;1mBodyType Load (0.2ms)[0m   [0;1mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 2) [0m
+Completed in 38ms (View: 18, DB: 4) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 13:01:36) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (4.8ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;35;1mBodyType Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `body_types`[0m
+  [4;36;1mBodyType Load (1.0ms)[0m   [0;1mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 2) [0m
+Completed in 45ms (View: 29, DB: 7) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 13:02:04) [GET]
+  Parameters: {"APTANA_NOCACHE_1274353324009"=>"1274353324009", "id"=>"show"}
+  [4;35;1mContact Columns (3.8ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (0.3ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 0) [0m
+
+ActiveRecord::RecordNotFound (Couldn't find Contact with ID=show):
+  app/controllers/contacts_controller.rb:16:in `show'
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (136.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (not_found)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#show (for 127.0.0.1 at 2010-05-20 13:02:51) [GET]
+  Parameters: {"id"=>"298486374"}
+  [4;35;1mContact Columns (1.0ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mContact Load (1.1ms)[0m   [0;1mSELECT * FROM `contacts` WHERE (`contacts`.`id` = 298486374) [0m
+Rendering template within layouts/contacts
+Rendering contacts/show
+  [4;35;1mBodyType Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `body_types`[0m
+  [4;36;1mBodyType Load (0.2ms)[0m   [0;1mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 3) [0m
+Completed in 31ms (View: 16, DB: 3) | 200 OK [http://127.0.0.1/contacts/298486374]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to BodyTypesAddColumns (20100520104407)
+  [4;36;1mSQL (72.0ms)[0m   [0;1mALTER TABLE `body_types` DROP `type_expl_cz`[0m
+  [4;35;1mSQL (9.5ms)[0m   [0mALTER TABLE `body_types` DROP `type_expl_en`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mDELETE FROM schema_migrations WHERE version = '20100520104407'[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSHOW TABLES[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW FIELDS FROM `body_types`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mdescribe `body_types`[0m
+  [4;36;1mSQL (4.7ms)[0m   [0;1mSHOW KEYS FROM `body_types`[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mSHOW FIELDS FROM `contacts`[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mdescribe `contacts`[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mSHOW KEYS FROM `contacts`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m

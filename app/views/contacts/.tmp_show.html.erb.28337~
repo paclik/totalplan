@@ -40,7 +40,7 @@
 
 <p>
   <b>Body type:</b>
-  <%=h @contact.body_type.type_expl_cz %>
+  <%=h @contact.type_cz %>
 </p>
 
 

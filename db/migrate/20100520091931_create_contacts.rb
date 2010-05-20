@@ -9,7 +9,7 @@ class CreateContacts < ActiveRecord::Migration
       t.decimal :height
       t.decimal :weight
       t.decimal :age
-      t.string :body_type
+      t.integer :body_type_id
 
       t.timestamps
     end

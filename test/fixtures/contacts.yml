@@ -6,10 +6,10 @@ one:
   mob_phone: MyString
   land_line: MyString
   email: MyString
-  height: 9.99
-  weight: 9.99
-  age: 9.99
-  body_type: MyString
+  height: 180
+  weight: 70
+  age: 56
+  body_type_id: 1
 
 two:
   first_name: MyString
@@ -17,7 +17,7 @@ two:
   mob_phone: MyString
   land_line: MyString
   email: MyString
-  height: 9.99
-  weight: 9.99
-  age: 9.99
-  body_type: MyString
+  height: 160
+  weight: 65
+  age: 20
+  body_type_id: 3

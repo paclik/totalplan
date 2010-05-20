@@ -9,10 +9,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100517131024) do
+ActiveRecord::Schema.define(:version => 20100520091931) do
 
-  create_table "coaches", :force => true do |t|
-    t.string   "name"
+  create_table "body_types", :force => true do |t|
+    t.string   "type_cz"
+    t.string   "type_eng"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -23,38 +24,10 @@ ActiveRecord::Schema.define(:version => 20100517131024) do
     t.string   "mob_phone"
     t.string   "land_line"
     t.string   "email"
-    t.integer  "height",     :limit => 10, :precision => 10, :scale => 0
-    t.integer  "weight",     :limit => 10, :precision => 10, :scale => 0
-    t.integer  "age",        :limit => 10, :precision => 10, :scale => 0
-    t.string   "body_type"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "players", :force => true do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "players_sports", :force => true do |t|
-    t.integer  "player_id"
-    t.integer  "sport_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sports", :force => true do |t|
-    t.string   "name"
-    t.text     "description"
-    t.integer  "coach_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "tools", :force => true do |t|
-    t.string   "name"
-    t.integer  "sport_id"
+    t.integer  "height",       :limit => 10, :precision => 10, :scale => 0
+    t.integer  "weight",       :limit => 10, :precision => 10, :scale => 0
+    t.integer  "age",          :limit => 10, :precision => 10, :scale => 0
+    t.integer  "body_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

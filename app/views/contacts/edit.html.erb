@@ -36,8 +36,8 @@
     <%= f.text_field :age %>
   </p>
   <p>
-    <%= f.label :body_type %><br />
-    <%= f.text_field :body_type %>
+    <%= f.label :body_type_id %><br />
+    <%=  collection_select(:contact, :body_type_id, BodyType.all, :id, :type_cz, {:prompt => true})%>
   </p>
   <p>
     <%= f.submit 'Update' %>

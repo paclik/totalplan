@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  id: 1
+  type_cz: Horní
+  type_eng: Upper
+  type_expl_cz : Postava s horním ukládáním tuku
+  type_expl_en : Upper body fat deposition
+two:
+  id: 2
+  type_cz: Spodní
+  type_eng: Lower
+  type_expl_cz : Postava se spodním ukládáním tuku
+  type_expl_en : Lower body fat deposition
+three:
+  id: 3
+  type_cz: Střední
+  type_eng: Middle
+  type_expl_cz : Postava se středním ukládáním tuku
+  type_expl_en : Middle body fat deposition
+
+four:
+  id: 4
+  type_cz: Proporcionální
+  type_eng: Proportional
+  type_expl_cz : Postava s proporcionálním ukládáním tuku
+  type_expl_en : Proportional body fat deposition

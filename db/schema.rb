@@ -9,13 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100520091931) do
+ActiveRecord::Schema.define(:version => 20100520104407) do
 
   create_table "body_types", :force => true do |t|
     t.string   "type_cz"
     t.string   "type_eng"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "type_expl_cz", :default => ""
+    t.string   "type_expl_en", :default => ""
   end
 
   create_table "contacts", :force => true do |t|

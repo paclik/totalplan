@@ -1,7 +1,7 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 null:
-  id: 0
+  id: 5
   type_cz: Neurčeno
   type_eng: wo info
   type_expl_cz : bez udání 

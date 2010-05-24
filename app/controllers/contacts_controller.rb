@@ -1,6 +1,9 @@
 class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.xml
+  
+  
+  
   def index
     @contacts = Contact.all
 
@@ -9,7 +12,7 @@ class ContactsController < ApplicationController
       format.xml  { render :xml => @contacts }
     end
   end
-
+  
   # GET /contacts/1
   # GET /contacts/1.xml
   def show

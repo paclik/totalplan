@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100520104407) do
+ActiveRecord::Schema.define(:version => 20100531102125) do
 
   create_table "body_types", :force => true do |t|
     t.string   "type_cz"
@@ -30,6 +30,16 @@ ActiveRecord::Schema.define(:version => 20100520104407) do
     t.integer  "weight",       :limit => 10, :precision => 10, :scale => 0
     t.integer  "age",          :limit => 10, :precision => 10, :scale => 0
     t.integer  "body_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "crypted_password"
+    t.string   "password_salt"
+    t.string   "persistence_token"
+    t.boolean  "admin"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

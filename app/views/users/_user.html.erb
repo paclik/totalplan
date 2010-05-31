@@ -1,0 +1,30 @@
+    <% form_for @user do |form| %>  
+    <%= form.error_messages %>  
+    <ol class="formList">  
+      
+      <li>  
+        <%= form.label :email, "Email" %>  
+       <%= form.text_field :email %>  
+     </li>  
+     <li>  
+       <%= form.label :password, "Password" %>  
+       <%= form.password_field :password %>  
+     </li>  
+     <li>  
+       <%= form.label :password_confirmation, "Password confirmation" %>  
+       <%= form.password_field :password_confirmation %>  
+     </li>  
+     <li>   
+     <% if  current_user%>   
+     	<% if current_user.admin %>
+     		<%= form.label :admin, "Admin" %>  
+     		<%= form.text_field :admin %> 
+     	<% end %> 	
+     <% end %> 
+            
+     
+     <li>  
+       <%= form.submit "Submit" %>  
+     </li>  
+   </ol>  
+   <% end %>  

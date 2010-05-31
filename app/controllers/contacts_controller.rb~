@@ -2,7 +2,7 @@ class ContactsController < ApplicationController
   # GET /contacts
   # GET /contacts.xml
   
-   before_filter :require_user, :only => [:new, :show, :edit, :update, :index, :destroy, :create]
+  
   
   def index
     @contacts = Contact.all

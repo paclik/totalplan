@@ -1,0 +1,7 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+ one:
+   email: admin@amelem.cz
+   crypted_password: edbf7959b44c2961e096d29ee8427fe3851e112b536fcffea55781829b57edab994c562083460ada235e619a0e6bdabd4c28ec9bc57670837b65f29483bf2bb8
+   password_salt:    gf3W5b8_LTwDiibBH-MG
+   admin: true

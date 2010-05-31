@@ -1,0 +1,19 @@
+<h1>Pro vstup na stránky se musíte přihlásit</h1>
+  
+   
+ <% form_for @user_session do |form| %>  
+ <%= form.error_messages %>  
+ <ol class="formList">  
+   <li>  
+     <%= form.label :email, "email" %>  
+     <%= form.text_field :email %>  
+   </li>  
+   <li>  
+     <%= form.label :password, "Password" %>  
+     <%= form.password_field :password %>  
+   </li>  
+   <li>  
+     <%= form.submit "Submit" %>  
+   </li>  
+ </ol>  
+ <% end %>  

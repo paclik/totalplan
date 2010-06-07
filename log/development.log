@@ -13072,3 +13072,70 @@ Rendering contacts/index
   [4;35;1mBodyType Load (0.3ms)[0m   [0mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 1) [0m
   [4;36;1mBodyType Load (0.3ms)[0m   [0;1mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 5) [0m
 Completed in 115ms (View: 89, DB: 4) | 200 OK [http://0.0.0.0/contacts]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 16:40:50) [GET]
+  Parameters: {"controller"=>"contacts", "action"=>"index"}
+
+SyntaxError (/home/paclik/workspace/amelem/app/controllers/contacts_controller.rb:2: syntax error, unexpected tIDENTIFIER, expecting keyword_then or ';' or '\n'
+	 if RUBY_VERSION > '1.9'require 'lib/mysql_utf8'
+	                               ^):
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (67.0ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 16:42:03) [GET]
+  Parameters: {"controller"=>"contacts", "action"=>"index"}
+
+SyntaxError (/home/paclik/workspace/amelem/app/controllers/contacts_controller.rb:100: syntax error, unexpected $end, expecting keyword_end):
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (80.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-06-07 16:42:04) [GET]
+  Parameters: {"controller"=>"contacts", "action"=>"index"}
+
+SyntaxError (/home/paclik/workspace/amelem/app/controllers/contacts_controller.rb:100: syntax error, unexpected $end, expecting keyword_end):
+  <internal:prelude>:8:in `synchronize'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /usr/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /usr/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+Rendered rescues/_trace (138.3ms)
+Rendered rescues/_request_and_response (0.4ms)
+Rendering rescues/layout (internal_server_error)
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+
+
+Processing ContactsController#index (for 127.0.0.1 at 2010-06-07 16:42:24) [GET]
+  Parameters: {"controller"=>"contacts", "action"=>"index"}
+  [4;35;1mUser Columns (0.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`id` = '980190962') LIMIT 1[0m
+  [4;35;1mContact Load (0.3ms)[0m   [0mSELECT * FROM `contacts` [0m
+Rendering template within layouts/application
+Rendering contacts/index
+  [4;36;1mContact Columns (0.9ms)[0m   [0;1mSHOW FIELDS FROM `contacts`[0m
+  [4;35;1mBodyType Columns (0.8ms)[0m   [0mSHOW FIELDS FROM `body_types`[0m
+  [4;36;1mBodyType Load (0.2ms)[0m   [0;1mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 3) [0m
+  [4;35;1mBodyType Load (0.3ms)[0m   [0mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 1) [0m
+  [4;36;1mBodyType Load (0.2ms)[0m   [0;1mSELECT * FROM `body_types` WHERE (`body_types`.`id` = 5) [0m
+Completed in 46ms (View: 21, DB: 4) | 200 OK [http://0.0.0.0/contacts]

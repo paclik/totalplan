@@ -1,6 +1,8 @@
 class ContactsController < ApplicationController
-	 #require 'lib/mysql_utf8'
-   navigation :contacts
+	if (RUBY_VERSION > '1.9') then require 'lib/mysql_utf8'
+	end
+		
+	navigation :contacts
 	
   # GET /contacts
   # GET /contacts.xml

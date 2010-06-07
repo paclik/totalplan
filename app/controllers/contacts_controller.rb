@@ -1,5 +1,5 @@
 class ContactsController < ApplicationController
-	 require 'lib/mysql_utf8'
+	 #require 'lib/mysql_utf8'
    navigation :contacts
 	
   # GET /contacts

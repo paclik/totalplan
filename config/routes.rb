@@ -43,12 +43,13 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :contacts
   map.resources :user_sessions  
 
-  map.hovno 'contact/index', :controller => 'contacts', :action => 'index' 
+  map.statistic 'kontakty/statistic', :controller => 'contacts', :action => 'statistic' 
   map.login 'login', :controller => 'user_sessions', :action => 'new'  
   map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'  
   
   #map.root :controller => 'contacts', :action => 'index'
   map.root :controller => 'contacts', :action => 'index'
-  #map.connect ':controller/:action/:id'
-  #map.connect ':controller/:action/:id.:format'
+  
+  map.connect ':controller/:action/:id'
+  map.connect ':controller/:action/:id.:format'
 end

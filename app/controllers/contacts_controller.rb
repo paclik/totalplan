@@ -1,13 +1,23 @@
 class ContactsController < ApplicationController
+	 require 'lib/mysql_utf8'
+   navigation :contacts
+	
   # GET /contacts
   # GET /contacts.xml
   
    before_filter :require_user, :only => [:new, :show, :edit, :update, :index, :destroy, :create]
   
+  def statistic
+    current_navigation :contacts
+    @contacts = Contact.all
+    @pocetKontaktu = Contact.count
+  	
+    #render  :text => "Pocet kontaktu #{@pocetKontaktu}" , :layout => true 
+  end 
+   
   def index
     @contacts = Contact.all
-
-    respond_to do |format|
+      respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @contacts }
     end

@@ -22,7 +22,7 @@
     color:black;
     font-size: 11px; 
     border: 2px solid  	 	#777777;
-    
+    width:800px;
     /*border-collapse zpusobi ze neni ramecek kol bunek*/
     /*border-collapse:collapse;*/
     
@@ -48,6 +48,10 @@
    /*pokud bych nahodou chtel obarvit bunky tabulky*/
     font-size: 11px; 
    
+    
+}
+
+.listtable table {
     
 }
 

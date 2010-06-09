@@ -1,3 +1,4 @@
+<h2>Kontakt</H2>
 <p>
   <b>First name:</b>
   <%=h @contact.first_name %>

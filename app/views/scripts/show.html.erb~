@@ -1,0 +1,13 @@
+<div>
+  <b>Name:</div>
+  <%=h @script.name %>
+</p>
+
+<div >
+  <b>Message:</b>
+  <%=h @script.message %>
+</div >
+
+
+<%= link_to 'Edit', edit_script_path(@script) %> |
+<%= link_to 'Back', scripts_path %>

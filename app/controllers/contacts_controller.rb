@@ -10,7 +10,6 @@ class ContactsController < ApplicationController
    before_filter :require_user, :only => [:new, :show, :edit, :update, :index, :destroy, :create]
   
   def statistic
-    current_navigation :contacts
     @contacts = Contact.all
     @pocetKontaktu = Contact.count
   	

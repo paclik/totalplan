@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100531102125) do
+ActiveRecord::Schema.define(:version => 20100609091957) do
 
   create_table "body_types", :force => true do |t|
     t.string   "type_cz"
@@ -30,6 +30,13 @@ ActiveRecord::Schema.define(:version => 20100531102125) do
     t.integer  "weight",       :limit => 10, :precision => 10, :scale => 0
     t.integer  "age",          :limit => 10, :precision => 10, :scale => 0
     t.integer  "body_type_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "scripts", :force => true do |t|
+    t.string   "name"
+    t.text     "message"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

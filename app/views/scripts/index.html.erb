@@ -1,0 +1,23 @@
+<h1>Listing scripts</h1>
+
+<table class="listtable"  >
+  <tr>
+    <th>Name</th>
+    <th>Message</th>
+  </tr>
+
+<% ####   vypis jednotlivzch radku scripts  %>   
+<% ####   i = row counter %> 
+<%i=0%>
+<% @scripts.each do |script| %>
+  <% if  @highlight =~ /\Aodd/ then @highlight = 'even' else  @highlight = 'odd' end  %>
+  
+  <tr id='<%= @highlight%>'>
+    <td ><%= link_to script.name, script  %></td>
+    <td><%=h script.message[0..300] + "......  "  %></td>
+  </tr>
+  
+<% end %>  
+  
+
+</table>

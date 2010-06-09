@@ -1,0 +1,99 @@
+
+.showRecord {
+    margin-left: auto; 
+    margin-right: auto;
+    background: #f7f7f7;
+    text-align:justify; 
+    //font-weight:bold;
+    color:black;
+    font-size: 11px; 
+    border: 2px solid #669999;
+    margin:2px;
+    padding:6px;
+    
+} 
+
+.listtable  {
+    text-align:left;
+    margin-left: auto; 
+    margin-right: auto;
+    background-color : 	#CCCCCC; /*divne zelena ramecek kolem vsech prvku vypisu listu*/
+    TEXT-DECORATION: none;
+    color:black;
+    font-size: 11px; 
+    border: 2px solid  	 	#777777;
+    
+    /*border-collapse zpusobi ze neni ramecek kol bunek*/
+    /*border-collapse:collapse;*/
+    
+    
+}
+
+
+.listtable th a:link, .listtable th a:visited {
+     
+     TEXT-DECORATION:underline;
+     font-weight:bold;
+     color:black;
+      
+     
+}
+
+
+
+.listtable td {
+   
+   
+   /* background-color :lime;*/
+   /*pokud bych nahodou chtel obarvit bunky tabulky*/
+    font-size: 11px; 
+   
+    
+}
+
+.listtable th {
+     background-color :#669999;
+     TEXT-DECORATION: none;
+    
+}
+
+.listtable a {
+     TEXT-DECORATION:underline;
+     color:black;
+     font-weight:normal;
+     WIDTH:AUTO;
+    
+}
+
+.listtable form {
+    display:inline;
+}
+
+.listtable a:hover {
+    background-color: yellow;
+    TEXT-DECORATION:underline;
+    color:black;
+    
+}
+
+
+
+td {
+    vertical-align:top;
+}
+
+
+#odd
+{
+	background: #f7f7f7;
+}
+
+#even
+{
+	background: #e6e6e6;
+}
+
+#red
+{
+	background: #FFCCCC;
+}

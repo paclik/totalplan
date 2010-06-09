@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :scripts
+
   map.resources :contacts
   # The priority is based upon order of creation: first created -> highest priority.
 
@@ -40,9 +42,11 @@ ActionController::Routing::Routes.draw do |map|
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
   # consider removing or commenting them out if you're using named routes and resources.
   map.resources :users   
+  map.resources :scripts
   map.resources :contacts
   map.resources :user_sessions  
-
+  
+  map.statistic 'scenar/statistic', :controller => 'scripts', :action => 'statistic'
   map.statistic 'kontakty/statistic', :controller => 'contacts', :action => 'statistic' 
   map.login 'login', :controller => 'user_sessions', :action => 'new'  
   map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'  

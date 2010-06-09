@@ -1,5 +1,5 @@
-<h2></H2>
-<table>
+<h2>Přehled kontaktů</H2>
+<table class="listtable">
   <tr>
     <th>First name</th>
     <th>Last name</th>
@@ -11,11 +11,15 @@
     <th>Age</th>
     <th>Body type</th>
   </tr>
-
+<% ####   vypis jednotlivzch radku scripts  %>   
+<% ####   i = row counter %> 
+<%i=0%>
 <% @contacts.each do |contact| %>
-  <tr>
+  <% if  @highlight =~ /\Aodd/ then @highlight = 'even' else  @highlight = 'odd' end  %>
+  
+  <tr id='<%= @highlight%>'>
     <td><%=h contact.first_name %></td>
-    <td><%=h contact.last_name %></td>
+    <td><%= link_to contact.last_name, contact  %>
     <td><%=h contact.mob_phone %></td>
     <td><%=h contact.land_line %></td>
     <td><%=h contact.email %></td>
@@ -23,13 +27,8 @@
     <td><%=h contact.weight %></td>
     <td><%=h contact.age %></td>
     <td><%=h contact.body_type.type_cz %></td>
-    <td><%= link_to 'Show', contact %></td>
-    <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
-    <td><%= link_to 'Destroy', contact, :confirm => 'Are you sure?', :method => :delete %></td>
+    
   </tr>
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New contact', new_contact_path %>

@@ -25,13 +25,28 @@ SimpleNavigation::Configuration.run do |navigation|
   
  	 primary.item :contacts, 'Kontakty',contacts_path  do |sub_nav|
  	 	 sub_nav.item :list, 'Přehled', contacts_path 
-    	sub_nav.item :new, 'New', new_contact_path
-    	sub_nav.item :new, 'Statistic',:controller => 'contacts', :action => 'statistic'
+    	sub_nav.item :new, 'Nový', new_contact_path
+    	sub_nav.item :new, 'Statistika',:controller => 'contacts', :action => 'statistic'
     	
     end 
-    primary.item :users, 'users', :controller => 'users', :action => 'current', :id => 'edit'  do |sub_nav|
-    	sub_nav.item :new, 'new', new_user_path
-    	sub_nav.item :new, 'Current', :controller => 'users', :action => 'current', :id => 'edit' 
+    
+    primary.item :talks, 'Hovor',contacts_path  do |sub_nav|
+ 	 	 sub_nav.item :list, 'Přehled', contacts_path 
+    	sub_nav.item :new, 'Nový', contacts_path
+    	sub_nav.item :pending, 'Nevyřízené', contacts_path
+    	sub_nav.item :new, 'Statistika', contacts_path
+    	
+    end 
+    
+    primary.item :scripts, 'Scénář',scripts_path  do |sub_nav|
+    	sub_nav.item :list, 'Přehled', scripts_path
+    	sub_nav.item :new, 'Nový',  new_script_path 
+    	sub_nav.item :new, 'Statistika', :controller => 'scripts', :action => 'statistic'
+    	
+    end 
+    primary.item :users, 'Uživatel', :controller => 'users', :action => 'current', :id => 'edit'  do |sub_nav|
+    	sub_nav.item :new, 'Nový', new_user_path
+    	sub_nav.item :new, 'Současný', :controller => 'users', :action => 'current', :id => 'edit' 
     end 
   
 	end

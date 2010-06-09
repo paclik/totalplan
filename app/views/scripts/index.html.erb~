@@ -1,0 +1,16 @@
+<h1>Listing scripts</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Message</th>
+  </tr>
+
+<% @scripts.each do |script| %>
+  <tr>  
+    <td><%= link_to script.name, script  %></td>
+    <td><%=h script.message  %></td>
+    
+  </tr>
+<% end %>
+</table>

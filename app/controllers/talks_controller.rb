@@ -1,7 +1,7 @@
 class TalksController < ApplicationController
   # GET /talks
   # GET /talks.xml
-  
+   before_filter :require_user, :only => [:new, :show, :edit, :update, :index, :destroy, :create]
   navigation :talks
   
   def index

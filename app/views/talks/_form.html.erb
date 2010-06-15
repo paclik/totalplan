@@ -1,0 +1,54 @@
+<p>
+	jméno: <b><%=h @talk.contact.first_name  %> </b>  příjmení: <b><%=h @talk.contact.last_name  %> </b>
+</p>	
+<p>
+	telefon: <%=h @talk.contact.mob_phone%>  email: <%=h @talk.contact.email%>
+</p>
+ <p>
+
+<% if controller.action_name == 'edit' then %>
+	<% form_tag :controller => 'talks', :action => 'chngemail' do %>
+				<%= text_field_tag "email",value=@talk.contact.email,{:size => 30} %> 
+				<%=  hidden_field_tag "id", value=@talk.id %>
+				<%= submit_tag 'Změň email'%>
+	<%end %>  
+<%end %> 
+</p>
+
+    
+<% form_for(@talk) do |f| %>
+  <%= f.error_messages %>
+  
+  <p>
+   <%=  f.hidden_field :contact_id %>
+  </p>
+  <p>
+    <%= f.label :call_when_time %><br />
+    <%= f.datetime_select :call_when_time,  :use_month_numbers => true %>
+  </p>
+  <p>
+    <%= f.label :finished %><br />
+    <%= f.check_box :finished %>
+  </p>
+  <p>
+    <%= f.label :poradna %><br />
+    <%= f.check_box :poradna %>
+  </p>
+  <p>
+    <%= f.label :poradna_when %><br />
+    <%= f.date_select :poradna_when, :order => [:day, :month, :year], :start_year => Time.now.year, :use_month_numbers => true,
+                                    :include_blank => true %>
+  </p>
+  <p>
+    <%= f.label :informace_zajem %><br />
+    <%= f.check_box :informace_zajem %>
+  </p>
+ 
+  <p>
+    <%= f.label :poznamka %><br />
+    <%= f.text_area :poznamka,"cols" =>100, "rows" => 15 %>
+  </p>
+  <p>
+    <%= f.submit 'Ulož' %>
+  </p>
+<% end %>

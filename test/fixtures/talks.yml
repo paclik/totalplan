@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  contact_id: 1
+  call_when_datum: 2010-06-11
+  call_when_time: 2010-06-11 14:03:26
+  finished: false
+  poradna: false
+  poradna_when: 2010-06-11
+  informace_zajem: false
+  poznamka: MyText
+
+two:
+  contact_id: 1
+  call_when_datum: 2010-06-11
+  call_when_time: 2010-06-11 14:03:26
+  finished: false
+  poradna: false
+  poradna_when: 2010-06-11
+  informace_zajem: false
+  poznamka: MyText

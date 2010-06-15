@@ -20,7 +20,7 @@
   <tr id='<%= @highlight%>'>
     <td><%=h contact.first_name %></td>
     <td><%= link_to contact.last_name, contact  %>
-    <td><%=h contact.mob_phone %></td>
+    <td><%= link_to contact.mob_phone, :controller => "talks", :action => "new", :contact_id => contact%>
     <td><%=h contact.land_line %></td>
     <td><%=h contact.email %></td>
     <td><%=h contact.height %></td>

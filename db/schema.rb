@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100609091957) do
+ActiveRecord::Schema.define(:version => 20100611120326) do
 
   create_table "body_types", :force => true do |t|
     t.string   "type_cz"
@@ -37,6 +37,18 @@ ActiveRecord::Schema.define(:version => 20100609091957) do
   create_table "scripts", :force => true do |t|
     t.string   "name"
     t.text     "message"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "talks", :force => true do |t|
+    t.integer  "contact_id"
+    t.datetime "call_when_time"
+    t.boolean  "finished"
+    t.boolean  "poradna"
+    t.date     "poradna_when"
+    t.boolean  "informace_zajem"
+    t.text     "poznamka"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

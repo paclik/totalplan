@@ -1,0 +1,38 @@
+<p>
+  <b>Contact:</b>
+  <%=h @talk.contact_id %>
+</p>
+
+<p>
+  <b>Call when time:</b>
+  <%=h   @talk.call_when_time.strftime("%d-%m-%Y %H.%M| Den: %a | Týden:%W") %>
+</p>
+
+<p>
+  <b>Finished:</b>
+  <%=h @talk.finished %>
+</p>
+
+<p>
+  <b>Poradna:</b>
+  <%=h @talk.poradna %>
+</p>
+
+<p>
+  <b>Poradna when:</b>
+  <%=h @talk.poradna_when %>
+</p>
+
+<p>
+  <b>Informace zajem:</b>
+  <%=h @talk.informace_zajem %>
+</p>
+
+<p>
+  <b>Poznamka:</b>
+  <%=h @talk.poznamka %>
+</p>
+
+
+<%= link_to 'Edit', edit_talk_path(@talk) %> |
+<%= link_to 'Back', talks_path %>

@@ -89,7 +89,8 @@ class TalksController < ApplicationController
     respond_to do |format|
       if @talk.update_attributes(params[:talk])
         flash[:notice] = 'Talk was successfully updated.'
-        format.html { redirect_to(@talk) }
+        #format.html { redirect_to(@talk) }
+        format.html { render :action => "edit" }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

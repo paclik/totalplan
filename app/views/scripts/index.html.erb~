@@ -14,7 +14,7 @@
   
   <tr id='<%= @highlight%>'>
     <td ><%= link_to script.name, script  %></td>
-    <td><%=h script.message[0..300] + "......  "  %></td>
+    <td><%= script.message[0..300] + "......  "  %></td>
   </tr>
   
 <% end %>  

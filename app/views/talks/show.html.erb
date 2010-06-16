@@ -1,15 +1,15 @@
 <p>
-  <b>Contact:</b>
-  <%=h @talk.contact_id %>
+  <b>Kontakt:</b>
+   <%=h  @talk.contact.first_name %> <%=h @talk.contact.last_name %> 
 </p>
 
 <p>
-  <b>Call when time:</b>
-  <%=h   @talk.call_when_time.strftime("%d-%m-%Y %H.%M| Den: %a | Týden:%W") %>
+  <b>Kdy zavolat:</b>
+  <%=h   @talk.call_when_time.strftime("%d-%m-%Y %H.%M| Den: %a | Týden:%W") if @talk.call_when_time %>
 </p>
 
 <p>
-  <b>Finished:</b>
+  <b>Hotovo:</b>
   <%=h @talk.finished %>
 </p>
 
@@ -19,8 +19,8 @@
 </p>
 
 <p>
-  <b>Poradna when:</b>
-  <%=h @talk.poradna_when %>
+  <b>Poradna kdy:</b>
+  <%=h @talk.poradna_when.strftime("%d-%m-%Y | Den: %a | Týden:%W") if @talk.poradna_when %>
 </p>
 
 <p>
@@ -34,5 +34,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_talk_path(@talk) %> |
-<%= link_to 'Back', talks_path %>
+<%= link_to 'Editovat', edit_talk_path(@talk) %> |
+<%= link_to 'Přehled hovorů', talks_path %>

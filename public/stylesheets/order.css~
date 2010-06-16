@@ -1,164 +1,17 @@
-body {
-      background-color :  #CCCCCC;
-      font-family : Verdana, Geneva, Arial, Helvetica, sans-serif;
-      margin: 0px; 
-      }
-      
-BODY, P, TD, TH, LI, INPUT, SELECT
-{
-	font-family: "Verdana", "Arial", "Helvetica", sans-serif;
-	font-size: 10  px;
-}      
-
-div.auto_complete {
-              width: 200px;
-              background: #fff;
-}
-
-
-div.auto_complete ul {
-              border:1px solid #888;
-              margin:0;
-              padding:0;
-              width:100%;
-              list-style-type:none;
-            }
-
-div.auto_complete ul li {
-              margin:0;
-              padding:3px;
-            }
-div.auto_complete ul li.selected { 
-             background-color: #ffb; 
-            }
- 
-div.auto_complete ul strong.highlight { 
-              color: #800; 
-              margin:0;
-              padding:0;
-            }
-
- div.auto_complete.ul.pointers  {
-      list-style-type: none;
-      margin:0px;
-      padding:0px;
-    }
-div.auto_complete.ul.pointers li.selected { background-color: #ffb; }
-div.auto_complete.li.pointer {
-      list-style-type: none;
-      display:block;
-      margin:0;
-      padding:2px;
-      height:32px;
-    }
-div.name {
-      font-weight:bold;
-      font-size:11px;
-      line-height:1.2em;
-    }
-
-#list {
-      margin:0;
-      margin-top:10px;
-      padding:0;
-      list-style-type: none;
-      width:250px;
-    }
-#list li {
-      margin:0;
-      margin-bottom:4px;
-      padding:5px;
-      border:1px solid #888;
-      cursor:move;
-    }
-
-#header {
-    float:top;
-    margin-top: 5px;
-	margin-left: 8px;
-	background-color : silver; // #bf2828;
-	width:98%; 
-    border-top: 1px solid black;
-	border-right: 1px solid black;
-	border-left: 1px solid black;
-    
-}       
-
-#content {
-    float:top;
-    background-color : #AAAAAA;
-    width:98%;  
-    text-align:center; 
-    color:black;
-    margin-left: 8px;
-    border-top: 1px solid black;
-	border-right: 1px solid black;
-	border-bottom: 1px solid black;
-	border-left: 1px solid black;
-}    
 
 .showRecord {
     margin-left: auto; 
     margin-right: auto;
     background: #f7f7f7;
-    text-align:center; 
+    text-align:justify; 
     //font-weight:bold;
     color:black;
     font-size: 11px; 
-    border: 3px solid #669999;
+    border: 2px solid #669999;
+    margin:2px;
+    padding:6px;
     
-    
-}    
-
-.obalOrder{
-     margin: 3px AUTO;
-     width: 90%;
-     
-          
-}
-
-.obalOrder  a:link, .obalOrder  a:visited {
-   color:black; 
-   font-weight:bold;
-   TEXT-DECORATION: underline;
-}    
-
-.obalOrder  a:hover {
-   color:black; 
-   font-weight:bold;
-   background-color:yellow;
-}    
-
-.stress {
-   color:black; 
-   font-weight:bold;
-   background-color:wheat;
-}    
-.stress_blink {
-   color:black; 
-   font-weight:bold;
-   background-color:yellow;
-   text-decoration:blink;
-}    
-.menu_stripe_all {
-    
-    background-color: #333333;
-    TEXT-DECORATION: none;
-    height:10px;
-    font-size: 11px; 
-    
-   
-}
-
-.menu_stripe_sel {
-    background-color: #555555;
-    TEXT-DECORATION: none;
-    height:10px;
-    font-size: 11px; 
-   
-}
-
-
+} 
 
 .listtable  {
     text-align:left;
@@ -169,7 +22,7 @@ div.name {
     color:black;
     font-size: 11px; 
     border: 2px solid  	 	#777777;
-    
+    width:800px;
     /*border-collapse zpusobi ze neni ramecek kol bunek*/
     /*border-collapse:collapse;*/
     
@@ -198,6 +51,10 @@ div.name {
     
 }
 
+.listtable table {
+    
+}
+
 .listtable th {
      background-color :#669999;
      TEXT-DECORATION: none;
@@ -207,7 +64,6 @@ div.name {
 .listtable a {
      TEXT-DECORATION:underline;
      color:black;
-    
      font-weight:normal;
      WIDTH:AUTO;
     
@@ -224,30 +80,7 @@ div.name {
     
 }
 
-.menutable  {
-    margin-left: auto; 
-    margin-right: auto;
-    text-align:center;
-    background-color :silver; //:#bf2828;
-    TEXT-DECORATION: none;
-    color:white;
-    font-size: 10px;  
-    border-collapse:collapse;
-}
 
-.menutable a:LINK, A:visited {
-    TEXT-DECORATION: none;
-    color:white;  
-    font-weight:bold;
-}
-
-.menutable a:hover {
-    background-color: yellow;
-    TEXT-DECORATION: underline;
-    color:black;
-    
-    
-}
 
 td {
     vertical-align:top;

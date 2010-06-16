@@ -1,8 +1,20 @@
 class ScriptsController < ApplicationController
-  if (RUBY_VERSION > '1.9') then require 'lib/mysql_utf8'
+  
+	
+	if (RUBY_VERSION > '1.9') then require 'lib/mysql_utf8'
 	end
 		
 	navigation :scripts
+	
+	before_filter :require_user
+	
+	def statistic
+    @contacts = Script.all
+    @pocetKontaktu = Script.count
+  	
+    render  :text => "Pocet scenaru #{@pocetKontaktu}" , :layout => true 
+  end 
+	
 	
 	# GET /scripts
   # GET /scripts.xml

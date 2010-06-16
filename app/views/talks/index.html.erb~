@@ -1,4 +1,4 @@
-<h1>Listing talks</h1>
+<h2>Listing talks</h2>
 
 <table class="listtable">
   <tr>
@@ -15,11 +15,12 @@
 <% ####   i = row counter %> 
 <%i=0%>
 <% @talks.each do |talk| %>
+	<% @TEXT = talk.poznamka[-200..-1] if talk.poznamka != nil %>
   <% if  @highlight =~ /\Aodd/ then @highlight = 'even' else  @highlight = 'odd' end  %>
   
   <tr id='<%= @highlight%>'>
-    <td>
-     	<%= link_to talk.contact.last_name,talk  %>
+    <td >
+     	<%= link_to talk.contact.last_name, talk ,{ :title =>"Editace hovoru"}  if talk.poznamka != nil %>
     </td>
    	<td>
    		<%=h talk.call_when_time.strftime("%d-%m-%y|%H.%M") if talk.call_when_time != nil %>
@@ -28,7 +29,8 @@
     <td><%=h "Ano" if talk.poradna %></td>
     <td><%=h talk.poradna_when %></td>
     <td><%=h "Ano" if talk.informace_zajem %></td>
-    <td><%=h "Ano" if talk.poznamka != "" %></td>
+   
+    <td ><%= link_to ("Ano", talk ,{ :title => @TEXT})  if talk.poznamka != "" %></td>
     </tr>
 <% end %>
 </table>

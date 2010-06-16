@@ -10,7 +10,8 @@ class ContactsController < ApplicationController
    before_filter :require_user, :only => [:new, :show, :edit, :update, :index, :destroy, :create]
   
   def statistic
-    @contacts = Contact.all
+    @title="Statistika"
+  	@contacts = Contact.all
     @pocetKontaktu = Contact.count
   	
     #render  :text => "Počet kontaktu #{@pocetKontaktu}" , :layout => true 
@@ -18,6 +19,7 @@ class ContactsController < ApplicationController
    
   def index
     @contacts = Contact.all
+    @title="Přehled kontaktů"
       respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @contacts }
@@ -28,7 +30,7 @@ class ContactsController < ApplicationController
   # GET /contacts/1.xml
   def show
     @contact = Contact.find(params[:id])
-
+    @title="Kontakt"
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @contact }
@@ -38,7 +40,8 @@ class ContactsController < ApplicationController
   # GET /contacts/new
   # GET /contacts/new.xml
   def new
-    @contact = Contact.new
+    @title="Nový kontakt"
+  	@contact = Contact.new
     @contact.age = 0;
     @contact.height = 0;
     @contact.weight = 0;
@@ -50,7 +53,8 @@ class ContactsController < ApplicationController
 
   # GET /contacts/1/edit
   def edit
-    @contact = Contact.find(params[:id])
+    @title="Edituj kontakt"
+  	@contact = Contact.find(params[:id])
   end
 
   # POST /contacts

@@ -2,7 +2,8 @@ body {
 	
 }
 
-div#user_nav { float: right; font-size: 0.9em; }
+div#user_nav { float: right; font-size: 0.9em;  }
+div#title { padding-left: 20px; float: left; color:#fffad9; font: bold  1em Verdana, Helvetica, Arial, sans-serif;;}
 
 ol.formList { list-style-type: none; margin-left: 32px; padding-left: 0; }
 ol.formList li { margin-bottom: 8px; font: bold 0.7em Verdana, Helvetica, Arial, sans-serif;  }

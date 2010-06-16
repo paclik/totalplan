@@ -1,5 +1,5 @@
 <div class="showRecord">
-  <b>Jméno scénáře:</b>
+  <b>Jméno skriptu:</b>
   <%=h @script.name %>
 </div >
 

@@ -21,10 +21,12 @@
 <div id="main_content">
 	<div class="example">
 		<div class="header" >
+			<div id="title" >  
+				<%= @title %>
+			</div>	
 			<div id="user_nav" >   
 				<% if current_user %>  
-					 <%= link_to "Register", new_user_path if current_user.admin %>
-					 <%= link_to current_user.email, edit_user_path(:current) %>  
+				  		 
 					 <%= link_to "Logout", logout_path %>  
 				 <% else %>  
 						

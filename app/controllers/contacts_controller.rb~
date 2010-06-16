@@ -13,7 +13,7 @@ class ContactsController < ApplicationController
     @contacts = Contact.all
     @pocetKontaktu = Contact.count
   	
-    #render  :text => "Pocet kontaktu #{@pocetKontaktu}" , :layout => true 
+    #render  :text => "Počet kontaktu #{@pocetKontaktu}" , :layout => true 
   end 
    
   def index

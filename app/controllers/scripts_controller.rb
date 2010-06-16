@@ -20,7 +20,7 @@ class ScriptsController < ApplicationController
   # GET /scripts.xml
   def index
     @scripts = Script.all
-
+    @title="Výpis skriptů"
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @scripts }
@@ -31,7 +31,7 @@ class ScriptsController < ApplicationController
   # GET /scripts/1.xml
   def show
     @script = Script.find(params[:id])
-
+    @title="Skript"
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @script }
@@ -42,7 +42,7 @@ class ScriptsController < ApplicationController
   # GET /scripts/new.xml
   def new
     @script = Script.new
-
+    @title="Nový skript"
     respond_to do |format|
       format.html # new.html.erb
       format.xml  { render :xml => @script }
@@ -51,7 +51,8 @@ class ScriptsController < ApplicationController
 
   # GET /scripts/1/edit
   def edit
-    @script = Script.find(params[:id])
+    @title="Editace skriptu"
+  	@script = Script.find(params[:id])
   end
 
   # POST /scripts

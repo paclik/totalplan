@@ -3,6 +3,7 @@ class UsersController < ApplicationController
    before_filter :require_admin, :only => [:new]
   
    def new  
+   	   @title="Nový uživatel"
        @user = User.new  
    end  
                                   
@@ -20,7 +21,8 @@ class UsersController < ApplicationController
   end  
   
   def edit  
-    @user = current_user  
+    @title="Editace současného uživatele"
+  	@user = current_user  
   end  
   
     

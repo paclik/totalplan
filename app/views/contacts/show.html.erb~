@@ -1,49 +1,51 @@
 <h2>Kontakt</H2>
-<p>
+<div class="showRecord">
+<div>
   <b>First name:</b>
   <%=h @contact.first_name %>
-</p>
+</div>
 
-<p>
+<div>
   <b>Last name:</b>
   <%=h @contact.last_name %>
-</p>
+</div>
 
-<p>
+<div>
   <b>Mob phone:</b>
   <%=h @contact.mob_phone %>
-</p>
+</div>
 
-<p>
+<div>
   <b>Land line:</b>
   <%=h @contact.land_line %>
-</p>
+</div>
 
-<p>
+<div>
   <b>Email:</b>
   <%=h @contact.email %>
-</p>
+</div>
 
-<p>
+<div>
   <b>Height:</b>
   <%=h @contact.height %>
-</p>
+</div>
 
-<p>
+<div>
   <b>Weight:</b>
   <%=h @contact.weight %>
-</p>
+</div>
 
-<p>
+<div>
   <b>Age:</b>
   <%=h @contact.age %>
-</p>
+</div>
 
-<p>
+<div>
   <b>Body type:</b>
   <%=h @contact.body_type.type_expl_cz %>
-</p>
-
-
+</div>
+</div>
+<div class="listtable">
 <%= link_to 'Edit', edit_contact_path(@contact) %> |
 <%= link_to 'Back', contacts_path %>
+</div>

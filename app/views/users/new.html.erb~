@@ -1,0 +1,2 @@
+<h2>Vytvoř nového uživatele</h1>
+<%= render @user %> 

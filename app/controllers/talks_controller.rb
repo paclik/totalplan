@@ -6,7 +6,7 @@ class TalksController < ApplicationController
   
   def index
     @talks = Talk.all
-
+    @title = "Výpis hovorů"
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @talks }
@@ -17,7 +17,7 @@ class TalksController < ApplicationController
   # GET /talks/1.xml
   def show
     @talk = Talk.find(params[:id])
-
+     @title="Hovor"
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @talk }
@@ -48,7 +48,7 @@ class TalksController < ApplicationController
   def new
     @talk = Talk.new
     @talk.contact_id = params[:contact_id]
-    
+    @title="Nový hovor"
     #@talk.call_when_time = Time.now
    
     #@contact = Contact.find(params[:contact_id])
@@ -59,6 +59,7 @@ class TalksController < ApplicationController
   # GET /talks/1/edit
   def edit
     @talk = Talk.find(params[:id])
+    @title="Edituju hovor"
     #render  :text => "format datumu  #{@formatter()}" , :layout => true 
     #render  :text => "editace hovoru s kontaktem #{@talk.contact.last_name}" , :layout => true 
    

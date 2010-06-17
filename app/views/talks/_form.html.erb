@@ -20,7 +20,8 @@
 <% form_for(@talk) do |f| %>
   <%= f.error_messages %>
   <%=  f.hidden_field :contact_id %>
-  <table class="showRecord">    
+  <div  class="showRecord">
+  <table>    
 		<tr>  
 			<td>
 				<%= f.label :Skript %><BR/>
@@ -70,5 +71,5 @@
 			</td>	
 		</tr>
   </table>  
-	 
+	</div> 
 <% end %>

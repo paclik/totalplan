@@ -37,7 +37,7 @@ SimpleNavigation::Configuration.run do |navigation|
     	
     end 
     
-    primary.item :scripts, 'Scénáře',scripts_path  do |sub_nav|
+    primary.item :scripts, 'Skripty',scripts_path  do |sub_nav|
     	sub_nav.item :list, 'Přehled', scripts_path
     	sub_nav.item :new, 'Nový',  new_script_path 
     	sub_nav.item :new, 'Statistika', :controller => 'scripts', :action => 'statistic'

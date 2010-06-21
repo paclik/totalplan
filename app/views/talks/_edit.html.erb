@@ -1,0 +1,77 @@
+<div class="showRecord">
+<p>
+	jméno: <b><%=h @talk.contact.first_name if @talk.contact %> </b>  
+	příjmení: <b><%=h @talk.contact.last_name if @talk.contact  %> </b>
+</p>	
+<p>
+	telefon: <%=h @talk.contact.mob_phone if @talk.contact %>  email: <%=h @talk.contact.email if @talk.contact%>
+</p>
+ <p>
+
+<% if controller.action_name != 'new' then %>
+	<% form_tag :controller => 'talks', :action => 'chngemail' do %>
+				<%= text_field_tag "email",value=@talk.contact.email,{:size => 30} %> 
+				<%=  hidden_field_tag "id", value=@talk.id %>
+				<%= submit_tag 'Změň email'%>
+	<%end %>  
+<%end %> 
+</p>
+
+</div>
+<% form_for(@talk) do |f| %>
+  <%= f.error_messages %>
+  <%=  f.hidden_field :contact_id %>
+  <div  class="showRecord">
+  <table>    
+		<tr>  
+			<td>
+				<%= f.label :Skript %><BR/>
+				<%= f.collection_select :script_id, Script.all, :id, :name, {:include_blank => true}  %>
+				
+			</td>
+			<td>
+				<%= f.label :Zavolat_kdy %><BR/>
+				<%= f.datetime_select :call_when_time,  :use_month_numbers => true %>
+			</td>
+			<td>
+				<%= f.label :hovor_ukončen %><BR/>
+				<%= f.check_box :finished %>
+		 </td>
+		 
+		</tr>
+		<tr>  
+			<td>
+				<%= f.label :poradna %><BR/>
+				<%= f.check_box :poradna %>
+			</td>
+			<td>
+				<%= f.label :poradna_kdy %><BR/>
+				<%= f.date_select :poradna_when, :order => [:day, :month, :year], :start_year => Time.now.year, :use_month_numbers => true,
+																				:include_blank => true %>
+			</td> 
+			<td>
+				<%= f.label :Zájem_o_informace  %><BR/>
+				<%= f.check_box :informace_zajem %>
+			</td>
+			
+		</tr>
+		<tr> 
+			<td colspan="3" class="skript">
+				<%= f.label :Skript %> <BR/>
+				<%=h @talk.script.message if  @talk.script %>
+			</td>	
+		</tr>
+		<tr> 
+			<td colspan="3" class="skript">
+				<%= f.label :poznámka %><br />
+				<%= f.text_area :poznamka,"cols" =>110, "rows" => 10 %>
+			</td>	
+		</tr>
+		<tr> 
+			<td colspan="3" >
+			 <%= f.submit 'Ulož' %>
+			</td>	
+		</tr>
+  </table>  
+	</div> 
+<% end %>

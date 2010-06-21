@@ -1,12 +1,14 @@
 class TalksController < ApplicationController
-  # GET /talks
-  # GET /talks.xml
-   before_filter :require_user, :only => [:new, :show, :edit, :update, :index, :destroy, :create]
+  auto_complete_for :contact, :id
+  before_filter :require_user, :only => [:new, :show, :edit, :update, :index, :destroy, :create]
   navigation :talks
   
+  
+  # GET /talks
+  # GET /talks.xml
   def index
     @talks = Talk.all
-
+    @title = "Výpis hovorů"
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @talks }
@@ -17,7 +19,7 @@ class TalksController < ApplicationController
   # GET /talks/1.xml
   def show
     @talk = Talk.find(params[:id])
-
+     @title="Hovor"
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @talk }
@@ -48,7 +50,7 @@ class TalksController < ApplicationController
   def new
     @talk = Talk.new
     @talk.contact_id = params[:contact_id]
-    
+    @title="Nový hovor"
     #@talk.call_when_time = Time.now
    
     #@contact = Contact.find(params[:contact_id])
@@ -59,6 +61,7 @@ class TalksController < ApplicationController
   # GET /talks/1/edit
   def edit
     @talk = Talk.find(params[:id])
+    @title="Edituju hovor"
     #render  :text => "format datumu  #{@formatter()}" , :layout => true 
     #render  :text => "editace hovoru s kontaktem #{@talk.contact.last_name}" , :layout => true 
    
@@ -89,7 +92,8 @@ class TalksController < ApplicationController
     respond_to do |format|
       if @talk.update_attributes(params[:talk])
         flash[:notice] = 'Talk was successfully updated.'
-        format.html { redirect_to(@talk) }
+        #format.html { redirect_to(@talk) }
+        format.html { render :action => "edit" }
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }

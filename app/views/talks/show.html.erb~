@@ -10,12 +10,12 @@
 
 <p>
   <b>Hotovo:</b>
-  <%=h @talk.finished %>
+  <%=h "Ano" if @talk.finished %>
 </p>
 
 <p>
   <b>Poradna:</b>
-  <%=h @talk.poradna %>
+  <%=h "Ano" if @talk.poradna  %>
 </p>
 
 <p>
@@ -25,7 +25,7 @@
 
 <p>
   <b>Informace zajem:</b>
-  <%=h @talk.informace_zajem %>
+  <%=h "Ano" if @talk.informace_zajem %>
 </p>
 
 <p>
@@ -34,5 +34,5 @@
 </p>
 
 
-<%= link_to 'Edit', edit_talk_path(@talk) %> |
-<%= link_to 'Back', talks_path %>
+<%= link_to 'Editovat', edit_talk_path(@talk) %> |
+<%= link_to 'Přehled hovorů', talks_path %>

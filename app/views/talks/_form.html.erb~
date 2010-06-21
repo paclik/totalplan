@@ -1,9 +1,10 @@
 <div class="showRecord">
 <p>
-	jméno: <b><%=h @talk.contact.first_name  %> </b>  příjmení: <b><%=h @talk.contact.last_name  %> </b>
+	jméno: <b><%=h @talk.contact.first_name if @talk.contact %> </b>  
+	příjmení: <b><%=h @talk.contact.last_name if @talk.contact  %> </b>
 </p>	
 <p>
-	telefon: <%=h @talk.contact.mob_phone%>  email: <%=h @talk.contact.email%>
+	telefon: <%=h @talk.contact.mob_phone if @talk.contact %>  email: <%=h @talk.contact.email if @talk.contact%>
 </p>
  <p>
 
@@ -20,8 +21,15 @@
 <% form_for(@talk) do |f| %>
   <%= f.error_messages %>
   <%=  f.hidden_field :contact_id %>
-  <table class="showRecord">    
-		<tr>  
+  <div  class="showRecord">
+  <table>    
+		<tr> 
+			<td colspan="3" >
+			 <%= f.label :contact_name %><br />
+			 <%= f.text_field :contact_name %>
+			</td>	
+		</tr>
+  	<tr>  
 			<td>
 				<%= f.label :Skript %><BR/>
 				<%= f.collection_select :script_id, Script.all, :id, :name, {:include_blank => true}  %>
@@ -70,5 +78,5 @@
 			</td>	
 		</tr>
   </table>  
-	 
+	</div> 
 <% end %>

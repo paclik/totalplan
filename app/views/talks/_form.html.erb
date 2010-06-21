@@ -1,31 +1,29 @@
 <div class="showRecord">
 <p>
-	jméno: <b><%=h @talk.contact.first_name  %> </b>  příjmení: <b><%=h @talk.contact.last_name  %> </b>
+	jméno: <b><%=h @talk.contact.first_name if @talk.contact %> </b>  
+	příjmení: <b><%=h @talk.contact.last_name if @talk.contact  %> </b>
 </p>	
 <p>
-	telefon: <%=h @talk.contact.mob_phone%>  email: <%=h @talk.contact.email%>
-</p>
- <p>
-
-<% if controller.action_name != 'new' then %>
-	<% form_tag :controller => 'talks', :action => 'chngemail' do %>
-				<%= text_field_tag "email",value=@talk.contact.email,{:size => 30} %> 
-				<%=  hidden_field_tag "id", value=@talk.id %>
-				<%= submit_tag 'Změň email'%>
-	<%end %>  
-<%end %> 
+	telefon: <%=h @talk.contact.mob_phone if @talk.contact %>  email: <%=h @talk.contact.email if @talk.contact%>
 </p>
 
 </div>
 <% form_for(@talk) do |f| %>
   <%= f.error_messages %>
-  <%=  f.hidden_field :contact_id %>
   <div  class="showRecord">
   <table>    
-		<tr>  
+		<tr> 
+			<td colspan="3" >
+			 <%= f.label :Příjmení_kontaktu%><br />
+			 <%= text_field_with_auto_complete :talk, :contact_name, { :size => 15 }, { :url => formatted_contacts_path(:js), :method => :get, :param_name => 'search' } %>
+
+			</td>	
+		</tr>
+  	<tr>  
 			<td>
 				<%= f.label :Skript %><BR/>
 				<%= f.collection_select :script_id, Script.all, :id, :name, {:include_blank => true}  %>
+				
 			</td>
 			<td>
 				<%= f.label :Zavolat_kdy %><BR/>

@@ -1,11 +1,13 @@
 class TalksController < ApplicationController
-  # GET /talks
-  # GET /talks.xml
-   before_filter :require_user, :only => [:new, :show, :edit, :update, :index, :destroy, :create]
+  
+  before_filter :require_user, :only => [:new, :show, :edit, :update, :index, :destroy, :create]
   navigation :talks
   
+  
+  # GET /talks
+  # GET /talks.xml
   def index
-    @talks = Talk.all
+    @talks = Talk.all                           
     @title = "Výpis hovorů"
     respond_to do |format|
       format.html # index.html.erb

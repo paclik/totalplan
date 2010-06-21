@@ -1,6 +1,6 @@
 <p>
   <b>Kontakt:</b>
-   <%=h  @talk.contact.first_name %> <%=h @talk.contact.last_name %> 
+   <%=h  @talk.contact.first_name if @talk.contact   %> <%=h @talk.contact.last_name if @talk.contact  %> 
 </p>
 
 <p>

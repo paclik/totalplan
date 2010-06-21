@@ -18,11 +18,14 @@ class ContactsController < ApplicationController
   end 
    
   def index
-    @contacts = Contact.all
+    ##@contacts = Contact.all
+    @contacts = Contact.find(:all, :conditions => ['last_name LIKE ?', "%#{params[:search]}%"])
+
     @title="Přehled kontaktů"
       respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @contacts }
+      format.js #index.js.erb 
     end
   end
   

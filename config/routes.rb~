@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :talks
+
   map.resources :scripts
 
   map.resources :contacts
@@ -45,7 +47,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :scripts
   map.resources :contacts
   map.resources :user_sessions  
-
+  
+  map.statistic 'scenar/statistic', :controller => 'scripts', :action => 'statistic'
   map.statistic 'kontakty/statistic', :controller => 'contacts', :action => 'statistic' 
   map.login 'login', :controller => 'user_sessions', :action => 'new'  
   map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'  

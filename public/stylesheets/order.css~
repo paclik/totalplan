@@ -13,6 +13,17 @@
     
 } 
 
+.showRecord .skript {
+	background: white;
+	 border: 1px solid grey;
+	 margin:2px;
+   padding:8px;
+} 
+
+.showRecord td label  {
+	font-weight:bold;
+} 
+
 .listtable  {
     text-align:left;
     margin-left: auto; 

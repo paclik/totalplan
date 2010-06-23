@@ -1,4 +1,4 @@
-<div class="showRecord">
+<div class="editRecord">
 <p>
 	jméno: <b><%=h @talk.contact.first_name if @talk.contact %> </b>  
 	příjmení: <b><%=h @talk.contact.last_name if @talk.contact  %> </b>
@@ -10,8 +10,8 @@
 </div>
 <% form_for(@talk) do |f| %>
   <%= f.error_messages %>
-  <div  class="showRecord">
-  <table>    
+  <div  class = "showRecord">
+  <table >    
 		<tr> 
 			<td colspan="3" >
 			 <%= f.label :Příjmení_kontaktu%><br />
@@ -51,16 +51,16 @@
 			</td>
 			
 		</tr>
-		<tr> 
-			<td colspan="3" class="skript">
+		<tr > 
+			<td  colspan="3"  >
 				<%= f.label :Skript %> <BR/>
 				<%=h @talk.script.message if  @talk.script %>
 			</td>	
 		</tr>
 		<tr> 
-			<td colspan="3" class="skript">
-				<%= f.label :poznámka %><br />
-				<%= f.text_area :poznamka,"cols" =>110, "rows" => 10 %>
+			<td colspan="3">
+				<%= f.label :Obsah_hovoru %><br />
+				<%= f.text_area :poznamka,"cols" =>90, "rows" => 10 %>
 			</td>	
 		</tr>
 		<tr> 

@@ -7,7 +7,7 @@ class TalksController < ApplicationController
   # GET /talks
   # GET /talks.xml
   def index
-    @talks = Talk.all                           
+    @talks = Talk.all(:all,:order => "call_when_time DESC" )                           
     @title = "Výpis hovorů"
     respond_to do |format|
       format.html # index.html.erb
@@ -88,7 +88,10 @@ class TalksController < ApplicationController
   # PUT /talks/1.xml
   def update
     @talk = Talk.find(params[:id])
-
+    if (params[:email] != @talk.contact.email) then 
+    	Contact.update (@talk.contact_id,	 { :email => params[:email] })
+    	@talk.contact.email = params[:email]
+    end	
     respond_to do |format|
       if @talk.update_attributes(params[:talk])
         flash[:notice] = 'Talk was successfully updated.'

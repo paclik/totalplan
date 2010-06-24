@@ -56,22 +56,42 @@
 			
 		</tr>
 		<tr> 
-			<td colspan="3" class="skript">
+			<td colspan="3" class="skript" >
 				<%= f.label :Skript %> <BR/>
-				<%=h @talk.script.message if  @talk.script %>
+				<%= @talk.script.message if  @talk.script %>
 			</td>	
 		</tr>
 		<tr> 
 			<td colspan="3" class="skript">
-				<%= f.label :poznámka %><br />
-				<%= f.text_area :poznamka,"cols" =>110, "rows" => 10 %>
+				<%= f.label :Obsah_hovoru %><br />
+				<%= f.text_area :poznamka,"cols" => 90, "rows" => 10 %>
 			</td>	
 		</tr>
+		<tr> 
+			<td colspan="3" >
+			  <%= f.label :Výsledek_hovoru %><br />
+		
+				<%= f.radio_button :result, 'Nebere'%> Nebere
+  			<%= radio_button('talk', 'result', 'Zavěsil')%>Zavěsil
+  			<%= radio_button('talk', 'result', 'Nedostupný')%>Nedostupný
+  			<%= radio_button('talk', 'result', 'Schránka')%>Schránka
+  			<%= radio_button('talk', 'result', 'Nemá zájem')%>Nemá zájem
+			</td>	
+			
+		</tr>
+		<tr> 
+			<td colspan="3" >
+			
+			</td>	
+		</tr>
+		
 		<tr> 
 			<td colspan="3" >
 			 <%= f.submit 'Ulož' %>
 			</td>	
 		</tr>
+		
+		
   </table>  
 	</div> 
 <% end %>

@@ -26,6 +26,7 @@
 	font-weight:bold;
 } 
 
+
 .listtable  {
     text-align:left;
     margin-left: auto; 
@@ -35,7 +36,7 @@
     color:black;
     font-size: 11px; 
     border: 2px solid  	 	#777777;
-    min-width:800px;
+    
     /*border-collapse zpusobi ze neni ramecek kol bunek*/
     /*border-collapse:collapse;*/
     
@@ -52,6 +53,14 @@
      
 }
 
+.listtable td a:link, .listtable td a:visited {
+     
+     TEXT-DECORATION:underline;
+     font-weight:normal;
+     color:black;
+      
+     
+}
 
 
 .listtable td {
@@ -64,10 +73,6 @@
     
 }
 
-.listtable table {
-    
-}
-
 .listtable th {
      background-color :#669999;
      TEXT-DECORATION: none;
@@ -77,6 +82,7 @@
 .listtable a {
      TEXT-DECORATION:underline;
      color:black;
+    
      font-weight:normal;
      WIDTH:AUTO;
     
@@ -92,8 +98,6 @@
     color:black;
     
 }
-
-
 
 td {
     vertical-align:top;

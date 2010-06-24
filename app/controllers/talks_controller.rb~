@@ -1,5 +1,5 @@
 class TalksController < ApplicationController
-  auto_complete_for :contact, :id
+  
   before_filter :require_user, :only => [:new, :show, :edit, :update, :index, :destroy, :create]
   navigation :talks
   
@@ -7,7 +7,7 @@ class TalksController < ApplicationController
   # GET /talks
   # GET /talks.xml
   def index
-    @talks = Talk.all
+    @talks = Talk.all                           
     @title = "Výpis hovorů"
     respond_to do |format|
       format.html # index.html.erb

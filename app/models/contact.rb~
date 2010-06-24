@@ -7,4 +7,9 @@ class Contact < ActiveRecord::Base
 		#errors.add("chyba -","Vyplnit bud mobil nebo pevna") if mob_phone.blank? && land_line.blank? 
 		#errors.add("chyba -","Vyplnit bud mobil nebo pevna") if mob_phone.blank? && land_line.blank? 
 	end 
+	def full_name
+		#contact.last_name if contact
+		
+	end	
+   	
 end

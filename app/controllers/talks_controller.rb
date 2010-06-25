@@ -6,15 +6,19 @@ class TalksController < ApplicationController
   
   # GET /talks
   # GET /talks.xml
-  def index
-    @talks = Talk.all(:all,:order => "call_when_time DESC" )                           
+  def index 
+  	@timeref = DateTime.strptime(params[:search],'%d-%m-%Y') if params[:search]
+
+    @talks = Talk.find(:all, :conditions => ['call_when_time >= ?', "%#{@timeref}%"])
     @title = "Výpis hovorů"
+    #render  :text => params[:search], :layout => true 
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @talks }
     end
   end
 
+  
   # GET /talks/1
   # GET /talks/1.xml
   def show
@@ -42,9 +46,9 @@ class TalksController < ApplicationController
     #@talk.call_when_time = Time.now
     #@contact = Contact.find(params[:contact_id])
     #render  :text => @contact.last_name, :layout => true 
-    Contact.update (@talk.contact_id,	 { :email => params[:email] })
-
-    redirect_to :action => "edit", :id => params[:id]
+    #Contact.update (@talk.contact_id,	 { :email => params[:email] })
+    render  :text => params[:hovor_kdy], :layout => true 
+    #redirect_to :action => "edit", :id => params[:id]
   end
   
   def new

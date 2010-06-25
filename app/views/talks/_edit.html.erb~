@@ -1,28 +1,38 @@
 <div class="showRecord">
-<p>
-	jméno: <b><%=h @talk.contact.first_name if @talk.contact %> </b>  
-	příjmení: <b><%=h @talk.contact.last_name if @talk.contact  %> </b>
-</p>	
-<p>
-	telefon: <%=h @talk.contact.mob_phone if @talk.contact %>  email: <%=h @talk.contact.email if @talk.contact%>
-</p>
- <p>
-
-<% if controller.action_name != 'new' then %>
-	<% form_tag :controller => 'talks', :action => 'chngemail' do %>
-				<%= text_field_tag "email",value=@talk.contact.email,{:size => 30} %> 
-				<%=  hidden_field_tag "id", value=@talk.id %>
-				<%= submit_tag 'Změň email'%>
-	<%end %>  
-<%end %> 
-</p>
-
-</div>
 <% form_for(@talk) do |f| %>
   <%= f.error_messages %>
   <%=  f.hidden_field :contact_id %>
-  <div  class="showRecord">
+
+	<p>
+		jméno: <b><%=h @talk.contact.first_name if @talk.contact %> </b>  
+		příjmení: <b><%=h @talk.contact.last_name if @talk.contact  %> </b>
+	</p>	
+	
+	
+	<p>
+		telefon: <%=h @talk.contact.mob_phone if @talk.contact %>  email: 
+			<%= text_field_tag "email",value=@talk.contact.email,{:size => 30} %> 
+	</p>
+
   <table>    
+	<tr> 
+			<td colspan="3" >
+			  <%= f.label :Výsledek_hovoru %><br />
+		
+				<%= f.radio_button :result, 'Nebere'%> Nebere
+  			<%= radio_button('talk', 'result', 'Zavěsil')%>Zavěsil
+  			<%= radio_button('talk', 'result', 'Nedostupný')%>Nedostupný
+  			<%= radio_button('talk', 'result', 'Schránka')%>Schránka
+  			<%= radio_button('talk', 'result', 'Omyl')%>Omyl
+  			<%= radio_button('talk', 'result', 'Nemá zájem')%>Nemá zájem
+			</td>	
+			
+		</tr>	
+		<tr>  
+			<td colspan="3" >
+				<HR/>
+			</td>	
+		</tr>  
 		<tr>  
 			<td>
 				<%= f.label :Skript %><BR/>
@@ -31,7 +41,7 @@
 			</td>
 			<td>
 				<%= f.label :Zavolat_kdy %><BR/>
-				<%= f.datetime_select :call_when_time,  :use_month_numbers => true %>
+				<%= f.datetime_select :call_when_time, :order => [:day, :month, :year], :use_month_numbers => true %>
 			</td>
 			<td>
 				<%= f.label :hovor_ukončen %><BR/>
@@ -45,9 +55,11 @@
 				<%= f.check_box :poradna %>
 			</td>
 			<td>
-				<%= f.label :poradna_kdy %><BR/>
-				<%= f.date_select :poradna_when, :order => [:day, :month, :year], :start_year => Time.now.year, :use_month_numbers => true,
-																				:include_blank => true %>
+				
+			
+			<BR/>
+				<b><%= link_to "Nový hovor" , {:controller => "talks", :action => "new", :contact_id => @talk.contact_id } %>
+			  </b>
 			</td> 
 			<td>
 				<%= f.label :Zájem_o_informace  %><BR/>
@@ -67,18 +79,7 @@
 				<%= f.text_area :poznamka,"cols" => 90, "rows" => 10 %>
 			</td>	
 		</tr>
-		<tr> 
-			<td colspan="3" >
-			  <%= f.label :Výsledek_hovoru %><br />
 		
-				<%= f.radio_button :result, 'Nebere'%> Nebere
-  			<%= radio_button('talk', 'result', 'Zavěsil')%>Zavěsil
-  			<%= radio_button('talk', 'result', 'Nedostupný')%>Nedostupný
-  			<%= radio_button('talk', 'result', 'Schránka')%>Schránka
-  			<%= radio_button('talk', 'result', 'Nemá zájem')%>Nemá zájem
-			</td>	
-			
-		</tr>
 		<tr> 
 			<td colspan="3" >
 			
@@ -95,3 +96,8 @@
   </table>  
 	</div> 
 <% end %>
+<% form_tag ({:controller => 'talks', :action => "chngemail", :contact_id => @talk.contact_id},  :target => '_blank' )  do %>
+					<%=  date_select :hovory_kdy, :order => [:day, :month, :year], :start_year => Time.now.year, :use_month_numbers => true, :include_blank => true%>
+					<%=  hidden_field_tag "id", value=@talk.id %>
+					<%= submit_tag 'Hovory dne'%>
+	  	<%end %> 	

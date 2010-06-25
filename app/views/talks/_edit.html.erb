@@ -55,7 +55,9 @@
 				<%= f.check_box :poradna %>
 			</td>
 			<td>
-				<BR/>
+				
+			
+			<BR/>
 				<b><%= link_to "Nový hovor" , {:controller => "talks", :action => "new", :contact_id => @talk.contact_id } %>
 			  </b>
 			</td> 
@@ -94,3 +96,4 @@
   </table>  
 	</div> 
 <% end %>
+

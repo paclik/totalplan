@@ -55,7 +55,8 @@ ActionController::Routing::Routes.draw do |map|
   
   #map.root :controller => 'contacts', :action => 'index'
   map.root :controller => 'contacts', :action => 'index'
-  
+  map.resources :contacts, :collection => {:auto_complete_for_contact_id => :get }
+ 
   map.connect ':controller/:action/:id'
   map.connect ':controller/:action/:id.:format'
 end

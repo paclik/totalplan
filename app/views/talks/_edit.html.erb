@@ -95,5 +95,9 @@
 		
   </table>  
 	</div> 
-<% end %>
+<% end  %>
 
+<% form_tag ('/talks/listaccdate' )  do %>
+					<%=  date_select :hovor, :kdy, :order => [:day, :month, :year], :use_month_numbers => true%>
+				  <%= submit_tag 'Hovory dne'%>
+<%end %> 	

@@ -47,6 +47,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :scripts
   map.resources :contacts
   map.resources :user_sessions  
+  map.resources :talks
   
   map.statistic 'scenar/statistic', :controller => 'scripts', :action => 'statistic'
   map.statistic 'kontakty/statistic', :controller => 'contacts', :action => 'statistic' 

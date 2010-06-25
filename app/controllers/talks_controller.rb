@@ -7,13 +7,22 @@ class TalksController < ApplicationController
   # GET /talks
   # GET /talks.xml
   def index 
-  	@timeref = DateTime.strptime(params[:search],'%d-%m-%Y') if params[:search]
-
-    @talks = Talk.find(:all, :conditions => ['call_when_time >= ?', "%#{@timeref}%"])
+  	@timeref = DateTime.new
+  	if params[:datsearch] then
+  		@timeref = DateTime.strptime(params[:datsearch],'%Y-%m-%d') 
+  		@timemin = @timeref
+  		@timemax = @timeref + 1
+  		@conditions = "call_when_time >= '#{@timemin}' and call_when_time < '#{@timemax}'"
+  	else  
+  		@timeref = ""
+  		@timemin = ""
+  		@timemax = ""
+  		@conditions = ""
+  	end	
+    @talks = Talk.find(:all, :conditions => @conditions, :order => "call_when_time DESC")
     @title = "Výpis hovorů"
-    #render  :text => params[:search], :layout => true 
     respond_to do |format|
-      format.html # index.html.erb
+     format.html # index.html.erb
       format.xml  { render :xml => @talks }
     end
   end
@@ -33,7 +42,7 @@ class TalksController < ApplicationController
   # GET /talks/new
   # GET /talks/new.xml
   def chngemail
-    @talk = Talk.find(params[:id])
+    #@talk = Talk.find(params[:id])
     #@contact = Contact.find(@talk.contact_id)
     #@contact.email = params[:email]
     #if @contact.update 	
@@ -47,8 +56,25 @@ class TalksController < ApplicationController
     #@contact = Contact.find(params[:contact_id])
     #render  :text => @contact.last_name, :layout => true 
     #Contact.update (@talk.contact_id,	 { :email => params[:email] })
-    render  :text => params[:hovor_kdy], :layout => true 
+    @datum = params[:hovor]
+    @datven = ""
+    @datum.each_value {|value| @datven +=  "value is #{value}" }
+    
+    redirect_to :action => "index"
+    #render  :text => @datven,  :layout => true   	
+    #	params[:hovor]["kdy(1i)"] 
     #redirect_to :action => "edit", :id => params[:id]
+  end
+  
+  def listaccdate
+    @datum = params[:hovor]
+    @datven = ""
+    @datum.each_value {|value| @datven +=  "#{value}-" }
+    
+    #render  :text => @datven,  :layout => true  
+    
+    redirect_to :action => "index", :datsearch => @datven
+   
   end
   
   def new

@@ -32,7 +32,7 @@ SimpleNavigation::Configuration.run do |navigation|
     
     primary.item :talks, 'Hovory',talks_path  do |sub_nav|
  	 	 sub_nav.item :list, 'Přehled', talks_path 
- 	 	 #sub_nav.item :new, 'Nový', new_talk_path
+ 	 	 sub_nav.item :new, 'Nový', new_talk_path
     	
     	
     end 

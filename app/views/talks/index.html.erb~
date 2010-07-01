@@ -6,7 +6,8 @@
     <th>Poradna</th>
     <th>Poradna kdy</th>
     <th>Info</th>
-    <th>Poznamka</th>
+    <th>Obsah</th>
+     <th>Výsledek</th>
   </tr>
 
 <% ####   vypis jednotlivzch radku   %>   
@@ -21,7 +22,7 @@
      	<%= link_to talk.contact.last_name, talk ,{ :title =>"Editace hovoru"}  if talk.poznamka != nil %>
     </td>
    	<td>
-   		<%=h talk.call_when_time.strftime("%d-%m-%y|%H.%M") if talk.call_when_time != nil %>
+   		<%=h talk.call_when_time.strftime("%d-%m-%y|%H.%M")<%= render :partial => 'edit' %>  if talk.call_when_time != nil %>
     </td>
     <td><%=h "Ano" if talk.finished %></td>
     <td><%=h "Ano" if talk.poradna %></td>
@@ -29,6 +30,7 @@
     <td><%=h "Ano" if talk.informace_zajem %></td>
    
     <td ><%= link_to ("Ano", talk ,{ :title => @TEXT})  if talk.poznamka != "" %></td>
+    <td><%=h talk.result %></td>
     </tr>
 <% end %>
 </table>

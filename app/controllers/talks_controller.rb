@@ -6,6 +6,26 @@ class TalksController < ApplicationController
   
   # GET /talks
   # GET /talks.xml
+  def ajax_respond_date
+  	@datumlistu = Date.civil(params[:hovor][:"kdy(1i)"].to_i,params[:hovor][:"kdy(2i)"].to_i,params[:hovor][:"kdy(3i)"].to_i)
+    result_string = @datumlistu.strftime("%d-%m-%y")
+    @timeref = DateTime.new
+  	if params[:hovor] then
+  		@timeref = @datumlistu
+  		@timemin = @timeref
+  		@timemax = @timeref + 1
+  		@conditions = "call_when_time >= '#{@timemin}' and call_when_time < '#{@timemax}'"
+  	else  
+  		@timeref = ""
+  		@timemin = ""
+  		@timemax = ""
+  		@conditions = ""
+  	end	
+    @talks = Talk.find(:all, :conditions => @conditions, :order => "call_when_time DESC")
+    render :partial => "index"
+
+  end
+  
   def index 
   	@timeref = DateTime.new
   	if params[:datsearch] then
@@ -23,10 +43,12 @@ class TalksController < ApplicationController
     @title = "Výpis hovorů"
     respond_to do |format|
      format.html # index.html.erb
-      format.xml  { render :xml => @talks }
+     format.xml  { render :xml => @talks }
+    
+ 
     end
   end
-
+  
   
   # GET /talks/1
   # GET /talks/1.xml

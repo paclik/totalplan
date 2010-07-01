@@ -1,5 +1,5 @@
 <div class="showRecord">
-<% form_for(@talk) do |f| %>
+<% form_remote_for(@talk) do |f| %>
   <%= f.error_messages %>
   <%=  f.hidden_field :contact_id %>
 
@@ -85,6 +85,21 @@
 			
 			</td>	
 		</tr>
+		<tr> 
+			<td colspan="3" >
+			 
+			 <%=  date_select :hovor, :kdy,{:order => [:day, :month, :year], :use_month_numbers => true}, :onchange => 
+			  remote_function(:url => {:action => :ajax_respond_date,:id  => @talk} , :with => 'Form.serialize(this.form)', :update => 'my_list' ) %>
+			 	<%= submit_to_remote 'button', 'Hovory dne',  :url => {:action => :ajax_respond_date,:id => @talk}, :update => "my_list" %>  
+			</td>	
+		</tr>
+		<tr> 
+			<td colspan="3" >
+				<div id="my_list">
+          
+</div>
+			</td>	
+		</tr>
 		
 		<tr> 
 			<td colspan="3" >
@@ -92,12 +107,13 @@
 			</td>	
 		</tr>
 		
-		
+	
+
   </table>  
 	</div> 
 <% end  %>
 
-<% form_tag ('/talks/listaccdate' )  do %>
-					<%=  date_select :hovor, :kdy, :order => [:day, :month, :year], :use_month_numbers => true%>
-				  <%= submit_tag 'Hovory dne'%>
-<%end %> 	
+
+
+
+

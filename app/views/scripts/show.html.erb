@@ -5,7 +5,7 @@
 
 <div  class="showRecord" >
   <b>Obsah:</b>
-  <%= @script.message %>
+  <%= sanitize(@script.message) %>
 </div >
 
 <div class="listtable">

@@ -33,14 +33,16 @@ class TalksController < ApplicationController
   		@timemin = @timeref
   		@timemax = @timeref + 1
   		@conditions = "call_when_time >= '#{@timemin}' and call_when_time < '#{@timemax}'"
+  		@title = "Výpis hovorů dne: " +   @timeref.strftime("%d.%m.%Y")
   	else  
   		@timeref = ""
   		@timemin = ""
   		@timemax = ""
   		@conditions = ""
+  		@title = "Výpis všech hovorů"
   	end	
     @talks = Talk.find(:all, :conditions => @conditions, :order => "call_when_time DESC")
-    @title = "Výpis hovorů"
+    
     respond_to do |format|
      format.html # index.html.erb
      format.xml  { render :xml => @talks }

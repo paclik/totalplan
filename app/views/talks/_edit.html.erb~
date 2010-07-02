@@ -89,7 +89,7 @@
 			<td colspan="3" >
 			 
 			 <%=  date_select :hovor, :kdy,{:order => [:day, :month, :year], :use_month_numbers => true}, :onchange => 
-			  remote_function(:update => 'my_list', :url => {:action => :ajax_respond_date,:with  => @talk} ) %>
+			  remote_function(:url => {:action => :ajax_respond_date,:id  => @talk} , :with => 'Form.serialize(this.form)', :update => 'my_list' ) %>
 			 	<%= submit_to_remote 'button', 'Hovory dne',  :url => {:action => :ajax_respond_date,:id => @talk}, :update => "my_list" %>  
 			</td>	
 		</tr>

@@ -19,7 +19,7 @@
   
   <tr id='<%= @highlight%>'>
     <td >
-     	<%= link_to talk.contact.last_name, talk ,{ :title =>"Editace hovoru"}  if talk.poznamka != nil %>
+     	<%= link_to talk.contact.last_name + "  " + talk.contact.first_name, talk ,{ :title =>"Editace hovoru"}  if talk.poznamka != nil %>
     </td>
    	<td>
    		<%=h talk.call_when_time.strftime("%d-%m-%y|%H.%M")%>

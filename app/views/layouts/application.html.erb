@@ -11,10 +11,11 @@
   <%= stylesheet_link_tag 'order' %>
   <%= stylesheet_link_tag 'scaffold' %>
   <%= javascript_include_tag :defaults %>
+  <%= calendar_date_select_includes 'silver' %>
 </head>
 <body>
 <div id='top_header'>
-  <div class='title'>Simple Total Plan</div>
+  <div class ='subtitle'><%= link_to " Simple Total Plan",{:controller => "talks", :action => "index", :datsearch => Date.today.strftime("%Y-%m-%d")}  %> </div>
     <div class='sub'>
         by  Zdeny
     </div>

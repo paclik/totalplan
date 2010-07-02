@@ -25,7 +25,7 @@
     <td><%=h contact.height %></td>
     <td><%=h contact.weight %></td>
     <td><%=h contact.age %></td>
-    <td><%=h contact.body_type.type_cz %></td>
+    <td><%=h contact.body_type.type_cz if contact.body_type %></td>
     
   </tr>
 <% end %>

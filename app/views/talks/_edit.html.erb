@@ -91,7 +91,7 @@
 			 <%=  date_select :hovor, :kdy,{:order => [:day, :month, :year], :use_month_numbers => true}, :onchange => 
 			  remote_function(:url => {:action => :ajax_respond_date,:id  => @talk} , :with => 'Form.serialize(this.form)', :update => 'my_list' ) %>
 			  
-			 	
+			 	<%= calendar_date_select_tag 'p_date_and_time', 'January 2, 2007 5:45 pm', :time => true  %>
 
 			  <%= submit_to_remote 'button', 'Hovory dne',  :url => {:action => :ajax_respond_date,:id => @talk}, :update => "my_list" %>  
 			</td>	

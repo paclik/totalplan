@@ -28,7 +28,7 @@ class TalksController < ApplicationController
 
   end
   def ajax_respond_clear 
-  	result_string = "<p>Vyberte datum..</p>"
+  	result_string = "<p>Načítám seznam..</p>"
   	render  :text => result_string,  :layout => false
   	#render :file => 'TimeAdd.png', :type => 'image/png',  :layout => false
   	#send_file 'public/images/TimeAdd.png', :type => 'image/png', :disposition => 'inline', :filename => "site-stats.png"

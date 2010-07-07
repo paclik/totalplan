@@ -7,10 +7,12 @@ class TalksController < ApplicationController
   # GET /talks
   # GET /talks.xml
   def ajax_respond_date
-  	@datumlistu = Date.civil(params[:hovor][:"kdy(1i)"].to_i,params[:hovor][:"kdy(2i)"].to_i,params[:hovor][:"kdy(3i)"].to_i)
+  	#"p_date_and_time"=>"22.7.2010 16:34",
+  	@datumlistu = DateTime.strptime(params[:p_date_and_time],'%d.%m.%Y')
+  	#@datumlistu = Date.civil(params[:hovor][:"kdy(1i)"].to_i,params[:hovor][:"kdy(2i)"].to_i,params[:hovor][:"kdy(3i)"].to_i)
     result_string = @datumlistu.strftime("%d-%m-%y")
     @timeref = DateTime.new
-  	if params[:hovor] then
+  	if params[:p_date_and_time] then
   		@timeref = @datumlistu
   		@timemin = @timeref
   		@timemax = @timeref + 1

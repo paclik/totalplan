@@ -27,7 +27,15 @@ class TalksController < ApplicationController
     render :partial => "index"
 
   end
-  
+  def ajax_respond_clear 
+  	result_string = "<p>Vyberte datum..</p>"
+  	render  :text => result_string,  :layout => false
+  	#render :file => 'TimeAdd.png', :type => 'image/png',  :layout => false
+  	#send_file 'public/images/TimeAdd.png', :type => 'image/png', :disposition => 'inline', :filename => "site-stats.png"
+  	#send_file '/path/to.jpeg', :type => 'image/jpeg', :disposition => 'inline'
+
+  end	
+  	
   def index 
   	@timeref = DateTime.new
   	if params[:datsearch] then

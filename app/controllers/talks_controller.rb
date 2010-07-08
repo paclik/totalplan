@@ -28,6 +28,23 @@ class TalksController < ApplicationController
     render :partial => "index"
 
   end
+  
+  def ajax_respond_start_talk 
+  	@talk = Talk.find(params[:id])
+  	Talk.update (@talk,	 { :start_time => Time.now })
+  	@talk = Talk.find(params[:id])
+   	render  :text => @talk.start_time.localtime.strftime("%d-%m-%Y | %H.%M.%S") ,  :layout => false
+   	 
+  end	
+  
+  def ajax_respond_stop_talk 
+  	@talk = Talk.find(params[:id])
+  	Talk.update (@talk,	 { :end_time => Time.now })
+  	@talk = Talk.find(params[:id])
+   	render  :text => @talk.end_time.localtime.strftime("%d-%m-%Y | %H.%M.%S") ,  :layout => false
+   	 
+  end	
+  
   def ajax_respond_clear 
   	result_string = "<p>Zadejte datum výpisu..</p>"
   	render  :text => result_string,  :layout => false

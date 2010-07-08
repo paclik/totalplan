@@ -68,9 +68,26 @@
 			
 		</tr>
 		<tr> 
+			<td colspan="3" >
+				<%= submit_to_remote 'button', 'Start hov.',  :url => {:action => :ajax_respond_start_talk ,:id => @talk}, :update => "start_hovoru" %>  
+				<span id="start_hovoru">
+         	<%= @talk.start_time.localtime.strftime("%d-%m-%Y |  %H.%M")  if @talk.start_time
+          %> 
+				</span>
+				<%= submit_to_remote 'button', 'Stop hov.',  :url => {:action => :ajax_respond_stop_talk ,:id => @talk}, :update => "stop_hovoru" %>  
+				<span id="stop_hovoru">
+         	<%= @talk.end_time.localtime.strftime("%d-%m-%Y |  %H.%M")  if @talk.end_time
+          %> 
+				</span>
+			</td>	
+		</tr>
+		
+		
+		<tr> 
+		
 			<td colspan="3" class="skript" >
 				<%= f.label :Skript %> <BR/>
-				<%= @talk.script.message if  @talk.script %>
+				<%=  sanitize(@talk.script.message) if  @talk.script %>
 			</td>	
 		</tr>
 		<tr> 
@@ -80,11 +97,7 @@
 			</td>	
 		</tr>
 		
-		<tr> 
-			<td colspan="3" >
-			
-			</td>	
-		</tr>
+		
 		<tr> 
 			<td colspan="3" >
 			 

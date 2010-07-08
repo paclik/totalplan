@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100623125644) do
+ActiveRecord::Schema.define(:version => 20100708120419) do
 
   create_table "body_types", :force => true do |t|
     t.string   "type_cz"
@@ -53,6 +53,8 @@ ActiveRecord::Schema.define(:version => 20100623125644) do
     t.datetime "updated_at"
     t.integer  "script_id"
     t.text     "result"
+    t.datetime "start_time"
+    t.datetime "end_time"
   end
 
   create_table "users", :force => true do |t|

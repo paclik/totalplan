@@ -14,6 +14,20 @@
    <% CalendarDateSelect.format=(:finnish )%>
    <%= calendar_date_select_includes  "red", format = :finnish  %>
 
+   <script type="text/javascript">
+  _translations = {
+    "OK": "OK",
+    "Now": "Nyní",
+    "Today": "Dnes",
+    "Clear" : "Nuluj" 
+  }
+
+  Date.weekdays = $w("Po Ut St Ct Pa So Ne");
+
+  Date.months = $w("Leden Únor Březen Duben Květen Červen Červec Srpen Září Říjen Listopad Prosinec" );
+  
+</script>
+
   
 </head>
 <body>

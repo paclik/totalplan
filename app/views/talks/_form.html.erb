@@ -54,7 +54,7 @@
 		<tr > 
 			<td  colspan="3"  >
 				<%= f.label :Skript %> <BR/>
-				<%=h @talk.script.message if  @talk.script %>
+				<%=h  sanitize(@talk.script.message) if  @talk.script %>
 			</td>	
 		</tr>
 		<tr> 

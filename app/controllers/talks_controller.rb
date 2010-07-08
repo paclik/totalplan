@@ -8,6 +8,7 @@ class TalksController < ApplicationController
   # GET /talks.xml
   def ajax_respond_date
   	#"p_date_and_time"=>"22.7.2010 16:34",
+  	
   	@datumlistu = DateTime.strptime(params[:p_date_and_time],'%d.%m.%Y')
   	#@datumlistu = Date.civil(params[:hovor][:"kdy(1i)"].to_i,params[:hovor][:"kdy(2i)"].to_i,params[:hovor][:"kdy(3i)"].to_i)
     result_string = @datumlistu.strftime("%d-%m-%y")
@@ -28,7 +29,7 @@ class TalksController < ApplicationController
 
   end
   def ajax_respond_clear 
-  	result_string = "<p>Načítám seznam..</p>"
+  	result_string = "<p>Zadejte datum výpisu..</p>"
   	render  :text => result_string,  :layout => false
   	#render :file => 'TimeAdd.png', :type => 'image/png',  :layout => false
   	#send_file 'public/images/TimeAdd.png', :type => 'image/png', :disposition => 'inline', :filename => "site-stats.png"
@@ -153,7 +154,7 @@ class TalksController < ApplicationController
   def update
     @talk = Talk.find(params[:id])
     if (params[:email] != @talk.contact.email) then 
-    	Contact.update (@talk.contact_id,	 { :email => params[:email] })
+    	Contact.update (@talk.contact_id,{ :email => params[:email] })
     	@talk.contact.email = params[:email]
     end	
     respond_to do |format|

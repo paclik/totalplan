@@ -171,17 +171,17 @@ class TalksController < ApplicationController
   def update
     @talk = Talk.find(params[:id])
     if (params[:email] != @talk.contact.email) then 
-    	Contact.update (@talk.contact_id,{ :email => params[:email] })
+    	Contact.update(@talk.contact_id,{:email=>params[:email]})
     	@talk.contact.email = params[:email]
     end	
     respond_to do |format|
       if @talk.update_attributes(params[:talk])
         flash[:notice] = 'Talk was successfully updated.'
         #format.html { redirect_to(@talk) }
-        format.html { render :action => "edit" }
+        format.html { render :action => "show" }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => "show" }
         format.xml  { render :xml => @talk.errors, :status => :unprocessable_entity }
       end
     end

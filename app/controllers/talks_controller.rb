@@ -54,7 +54,7 @@ class TalksController < ApplicationController
   end	
   
   def ajax_respond_clear 
-  	result_string = '<img src="/images/ajax-loader.gif" />'
+  	result_string = '<span><img src="/images/ajax-loader.gif" />Vyhledávám..</span>'
   	render  :text => result_string,  :layout => false
   	#render :file => 'TimeAdd.png', :type => 'image/png',  :layout => false
   	#send_file 'public/images/TimeAdd.png', :type => 'image/png', :disposition => 'inline', :filename => "site-stats.png"

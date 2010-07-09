@@ -30,7 +30,7 @@
 
   
 </head>
-<body>
+<body >
 <div id='top_header'>
   <div class ='subtitle'><%= link_to " Simple Total Plan",{:controller => "talks", :action => "index", :datsearch => Date.today.strftime("%Y-%m-%d")}  %> </div>
     <div class='sub'>

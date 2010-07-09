@@ -8,6 +8,7 @@ class TalksController < ApplicationController
   # GET /talks.xml
   def ajax_respond_date
   	#"p_date_and_time"=>"22.7.2010 16:34",
+  	
   	@datumlistu = DateTime.strptime(params[:p_date_and_time],'%d.%m.%Y')
   	#@datumlistu = Date.civil(params[:hovor][:"kdy(1i)"].to_i,params[:hovor][:"kdy(2i)"].to_i,params[:hovor][:"kdy(3i)"].to_i)
     result_string = @datumlistu.strftime("%d-%m-%y")
@@ -27,8 +28,25 @@ class TalksController < ApplicationController
     render :partial => "index"
 
   end
+  
+  def ajax_respond_start_talk 
+  	@talk = Talk.find(params[:id])
+  	Talk.update (@talk,	 { :start_time => Time.now })
+  	@talk = Talk.find(params[:id])
+   	render  :text => @talk.start_time.localtime.strftime("%d-%m-%Y | %H.%M.%S") ,  :layout => false
+   	 
+  end	
+  
+  def ajax_respond_stop_talk 
+  	@talk = Talk.find(params[:id])
+  	Talk.update (@talk,	 { :end_time => Time.now })
+  	@talk = Talk.find(params[:id])
+   	render  :text => @talk.end_time.localtime.strftime("%d-%m-%Y | %H.%M.%S") ,  :layout => false
+   	 
+  end	
+  
   def ajax_respond_clear 
-  	result_string = "<p>Načítám seznam..</p>"
+  	result_string = "<p>Zadejte datum výpisu..</p>"
   	render  :text => result_string,  :layout => false
   	#render :file => 'TimeAdd.png', :type => 'image/png',  :layout => false
   	#send_file 'public/images/TimeAdd.png', :type => 'image/png', :disposition => 'inline', :filename => "site-stats.png"
@@ -153,17 +171,17 @@ class TalksController < ApplicationController
   def update
     @talk = Talk.find(params[:id])
     if (params[:email] != @talk.contact.email) then 
-    	Contact.update (@talk.contact_id,	 { :email => params[:email] })
+    	Contact.update(@talk.contact_id,{:email=>params[:email]})
     	@talk.contact.email = params[:email]
     end	
     respond_to do |format|
       if @talk.update_attributes(params[:talk])
         flash[:notice] = 'Talk was successfully updated.'
         #format.html { redirect_to(@talk) }
-        format.html { render :action => "edit" }
+        format.html { render :action => "show" }
         format.xml  { head :ok }
       else
-        format.html { render :action => "edit" }
+        format.html { render :action => "show" }
         format.xml  { render :xml => @talk.errors, :status => :unprocessable_entity }
       end
     end

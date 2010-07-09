@@ -6,9 +6,17 @@ class TalksController < ApplicationController
   
   # GET /talks
   # GET /talks.xml
+  
+  def get_content_to_display
+     #Place code here
+     render :update do |page|
+          page.replace_html "display_ajax", :partial =>  "index"
+     end
+   end
+  
   def ajax_respond_date
   	#"p_date_and_time"=>"22.7.2010 16:34",
-  	
+  	#sleep 2
   	@datumlistu = DateTime.strptime(params[:p_date_and_time],'%d.%m.%Y')
   	#@datumlistu = Date.civil(params[:hovor][:"kdy(1i)"].to_i,params[:hovor][:"kdy(2i)"].to_i,params[:hovor][:"kdy(3i)"].to_i)
     result_string = @datumlistu.strftime("%d-%m-%y")
@@ -46,7 +54,7 @@ class TalksController < ApplicationController
   end	
   
   def ajax_respond_clear 
-  	result_string = "<p>Zadejte datum výpisu..</p>"
+  	result_string = '<img src="/images/ajax-loader.gif" />'
   	render  :text => result_string,  :layout => false
   	#render :file => 'TimeAdd.png', :type => 'image/png',  :layout => false
   	#send_file 'public/images/TimeAdd.png', :type => 'image/png', :disposition => 'inline', :filename => "site-stats.png"

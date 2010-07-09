@@ -54,7 +54,7 @@
 		<tr > 
 			<td  colspan="3"  >
 				<%= f.label :Skript %> <BR/>
-				<%=h @talk.script.message if  @talk.script %>
+				<%=h  sanitize(@talk.script.message) if  @talk.script %>
 			</td>	
 		</tr>
 		<tr> 
@@ -73,8 +73,8 @@
 			 
 			Výpis hovorů dne:
 				<%= calendar_date_select_tag 'p_date_and_time', nil, :clear_button => false, :time => false, :popup => :force, 
-				:before_close =>  remote_function(:url => {:action => :ajax_respond_date,:id  => @talk} , :with => 'Form.serialize(this.form)', :update => 'my_list' ),
-  		  :onchange  => remote_function(:url => {:action => :ajax_respond_clear,:id  => @talk} , :with => 'Form.serialize(this.form)', :update => 'my_list' )
+				:after_close =>  remote_function(:url => {:action => :ajax_respond_date,:id  => @talk} , :with => 'Form.serialize(this.form)', :update => 'my_list' ),
+  		  :after_show => remote_function(:url => {:action => :ajax_respond_clear,:id  => @talk} , :with => 'Form.serialize(this.form)', :update => 'my_list' )
 			 %>  
 			 	</td>	
 		</tr>

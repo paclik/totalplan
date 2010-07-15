@@ -55,7 +55,7 @@ ActionController::Routing::Routes.draw do |map|
   map.logout 'logout', :controller => 'user_sessions', :action => 'destroy'  
   
   #map.root :controller => 'contacts', :action => 'index'
-  map.root :controller => 'contacts', :action => 'index'
+  map.root :controller => 'talks', :action => 'index', :datsearch => Date.today.strftime("%Y-%m-%d-") 
   map.resources :contacts, :collection => {:auto_complete_for_contact_id => :get }
  
   map.connect ':controller/:action/:id'

@@ -1,5 +1,32 @@
 <table class="listtable">
-  <tr>
+<tr id='list-filter' class="filter" >
+
+<% form_tag :controller => 'talks', :action => 'list' do %>
+	<th>Jméno <%= text_field_tag  "jmeno", {}, :size => 15 %>
+	
+	</th>
+	<th> 
+	<%= calendar_date_select_tag 'p_date_and_time', nil, :action => 'index', :clear_button => false, :time => false, :popup => :force, :size => 6, 
+					:after_close =>  remote_function(:url => {:action => :ajax_respond_date,} , :with => 'Form.serialize(this.form)', :update => 'my_list' )
+				
+	%>  <br/>
+	<%= calendar_date_select_tag 'p_date_and_time2', nil, :action => 'index', :clear_button => false, :time => false, :popup => :force, :size => 6, 
+					:after_close =>  remote_function(:url => {:action => :ajax_respond_date,} , :with => 'Form.serialize(this.form)', :update => 'my_list' )
+				
+	%> 
+	</th>
+	
+	<th colspan = 6>
+	  <%= submit_tag 'Nastav filtr'%>
+	</th>
+	
+	
+	
+	<% end  %> 
+
+</tr>
+
+<tr>
     <th>Kontakt</th>
     <th>Volat kdy </th>
     <th>Konec</th>
@@ -19,7 +46,7 @@
   
   <tr id='<%= @highlight%>'>
     <td >
-     	<%= link_to talk.contact.last_name, talk ,{ :title =>"Editace hovoru"}  if talk.poznamka != nil %>
+     	<%= link_to talk.contact.last_name + "  " + talk.contact.first_name, talk ,{ :title =>"Editace hovoru"}  if talk.poznamka != nil %>
     </td>
    	<td>
    		<%=h talk.call_when_time.strftime("%d-%m-%y|%H.%M")%>
@@ -35,5 +62,4 @@
 <% end %>
 </table>
 
-<br />
 

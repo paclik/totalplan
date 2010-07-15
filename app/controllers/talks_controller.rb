@@ -4,27 +4,126 @@ class TalksController < ApplicationController
   navigation :talks
   
   
-  # GET /talks
-  # GET /talks.xml
+  $cookieHash = {"contacts.last_name"=>nil,"call_when_time1_d"=>nil,"call_when_time2_d"=>nil,
+"productid"=>nil,"width"=>nil,"outtransport_id_n"=>nil}
   
-  def get_content_to_display
-     #Place code here
-     render :update do |page|
-          page.replace_html "display_ajax", :partial =>  "index"
-     end
-   end
+ ########  private section   ######################### 
+private
+####################################################
+#
+#
+
+def filter()
+    processParams()
+    @cookie = ""
+    $cookieHash.each_key {| key |
+    if $cookieHash[key] != nil then
+    @cookie += " " + key+ " : " + cookies[key].to_s
+    end     
+    }   
+    render :text => @cookie
+     
+    
+end
+
+
+
+# zpracuje parametry a vytvori condition a join retezec pro prikaz select
+def processParams()
+    readCookie()
+    @condition = nil
+    $cookieHash.each_key {| key |
+    if params[key] != nil and params[key] != "" then 
+      if @condition == nil  then
+      	if key.slice(-2..-1) == "_d"  then
+					case key.slice(-3..-3)
+						when "1"
+							@condition =  key.slice(0..-4) + " >= '#{DateTime.strptime(params[key],'%d.%m.%Y')}' "
+						else
+							@condition =  key.slice(0..-4) + " <= '#{DateTime.strptime(params[key],'%d.%m.%Y')+1}' "
+					end	
+        else
+          @condition =  "(LOWER("+key+") LIKE " + "'%" + params[key].downcase.strip  + "%')" 
+        
+        end
+      else
+         if key.slice(-2..-1) == "_d"  then
+          case key.slice(-3..-3)
+          when "1"
+      			@condition =  @condition + " and " + key.slice(0..-4) + " >= '#{DateTime.strptime(params[key],'%d.%m.%Y')}' "
+          else
+          	@condition =  @condition + " and " + key.slice(0..-4) + " <= '#{DateTime.strptime(params[key],'%d.%m.%Y')+1}' "
+          end	
+        else
+           	@condition =  @condition + " and " + "(LOWER("+key+") LIKE " + "'%" + params[key].downcase.strip  + "%')" 
+        
+        end
+      end 
+      end 
+      
+    }  
+     
+    
+end
+
+def readCookie()
   
+  
+  $cookieHash.each_key {| key |
+    $cookieHash[key] = params[key]
+    if $cookieHash[key] == nil then
+          $cookieHash[key] = cookies[key]
+      else
+          cookies[key] = $cookieHash[key]
+          
+      end
+       params[key] = $cookieHash[key]
+        
+  }  
+
+  
+   
+end
+
+# 
+# 
+########  public section   ######################### 
+public 
+####################################################
+#
+
+def search
+    
+    filter()
+    
+    #render :text => params
+  end
+
+def delsearch()
+
+  $cookieHash.each_key {| key |
+      $cookieHash[key] = nil
+        cookies[key] = nil
+          params[key] = nil
+  }  
+  
+  redirect_to :action => 'index'
+
+end
+
   def ajax_respond_date
   	#"p_date_and_time"=>"22.7.2010 16:34",
   	#sleep 2
-  	@datumlistu = DateTime.strptime(params[:p_date_and_time],'%d.%m.%Y')
+  	
   	#@datumlistu = Date.civil(params[:hovor][:"kdy(1i)"].to_i,params[:hovor][:"kdy(2i)"].to_i,params[:hovor][:"kdy(3i)"].to_i)
-    result_string = @datumlistu.strftime("%d-%m-%y")
+    #result_string = @datumlistu.strftime("%d-%m-%y")
     @timeref = DateTime.new
-  	if params[:p_date_and_time] then
+  	if !params[:p_date_and_time].empty?  then
+  		@datumlistu = DateTime.strptime(params[:p_date_and_time],'%d.%m.%Y') 
   		@timeref = @datumlistu
   		@timemin = @timeref
   		@timemax = @timeref + 1
+  
   		@conditions = "call_when_time >= '#{@timemin}' and call_when_time < '#{@timemax}'"
   	else  
   		@timeref = ""
@@ -32,14 +131,18 @@ class TalksController < ApplicationController
   		@timemax = ""
   		@conditions = ""
   	end	
+  	#if !params[:jmeno].empty?  then
+  	#	@conditions = @conditions + " and last_name == '#{params[:jmeno]}'"
+  	#end		
     @talks = Talk.find(:all, :conditions => @conditions, :order => "call_when_time DESC")
+    #render :text => @conditions
     render :partial => "index"
 
   end
   
   def ajax_respond_start_talk 
   	@talk = Talk.find(params[:id])
-  	Talk.update (@talk,	 { :start_time => Time.now })
+  	Talk.update (@talk,{ :start_time => Time.now })
   	@talk = Talk.find(params[:id])
    	render  :text => @talk.start_time.localtime.strftime("%d-%m-%Y | %H.%M.%S") ,  :layout => false
    	 
@@ -47,7 +150,7 @@ class TalksController < ApplicationController
   
   def ajax_respond_stop_talk 
   	@talk = Talk.find(params[:id])
-  	Talk.update (@talk,	 { :end_time => Time.now })
+  	Talk.update (@talk,{ :end_time => Time.now })
   	@talk = Talk.find(params[:id])
    	render  :text => @talk.end_time.localtime.strftime("%d-%m-%Y | %H.%M.%S") ,  :layout => false
    	 
@@ -63,28 +166,29 @@ class TalksController < ApplicationController
   end	
   	
   def index 
+  	processParams()
+  	
   	@timeref = DateTime.new
   	if params[:datsearch] then
   		@timeref = DateTime.strptime(params[:datsearch],'%Y-%m-%d') 
   		@timemin = @timeref
   		@timemax = @timeref + 1
-  		@conditions = "call_when_time >= '#{@timemin}' and call_when_time < '#{@timemax}'"
+  		@conditions = @condition + " and call_when_time >= '#{@timemin}' and call_when_time < '#{@timemax}'"
   		@title = "Výpis hovorů dne: " +   @timeref.strftime("%d.%m.%Y")
   	else  
   		@timeref = ""
   		@timemin = ""
   		@timemax = ""
-  		@conditions = ""
+  		if @condition != nil then @conditions = @condition + " "  else @conditions = " " end
   		@title = "Výpis všech hovorů"
   	end	
-    @talks = Talk.find(:all, :conditions => @conditions, :order => "call_when_time DESC")
-    
-    respond_to do |format|
-     format.html # index.html.erb
-     format.xml  { render :xml => @talks }
-    
- 
-    end
+  	
+    @talks = Talk.find(:all, :conditions => @conditions, :joins => [:contact], :order => "call_when_time DESC")
+    	#render :text => @conditions
+      respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @talks }
+      end
   end
   
   
@@ -186,7 +290,8 @@ class TalksController < ApplicationController
       if @talk.update_attributes(params[:talk])
         flash[:notice] = 'Talk was successfully updated.'
         #format.html { redirect_to(@talk) }
-        format.html { render :action => "show" }
+        format.html { redirect_to :back }
+        #format.html { render :action => "show" }
         format.xml  { head :ok }
       else
         format.html { render :action => "show" }

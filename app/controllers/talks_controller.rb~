@@ -6,17 +6,22 @@ class TalksController < ApplicationController
   
   # GET /talks
   # GET /talks.xml
+  
+  
+  
   def ajax_respond_date
   	#"p_date_and_time"=>"22.7.2010 16:34",
+  	#sleep 2
   	
-  	@datumlistu = DateTime.strptime(params[:p_date_and_time],'%d.%m.%Y')
   	#@datumlistu = Date.civil(params[:hovor][:"kdy(1i)"].to_i,params[:hovor][:"kdy(2i)"].to_i,params[:hovor][:"kdy(3i)"].to_i)
-    result_string = @datumlistu.strftime("%d-%m-%y")
+    #result_string = @datumlistu.strftime("%d-%m-%y")
     @timeref = DateTime.new
-  	if params[:p_date_and_time] then
+  	if !params[:p_date_and_time].empty?  then
+  		@datumlistu = DateTime.strptime(params[:p_date_and_time],'%d.%m.%Y') 
   		@timeref = @datumlistu
   		@timemin = @timeref
   		@timemax = @timeref + 1
+  
   		@conditions = "call_when_time >= '#{@timemin}' and call_when_time < '#{@timemax}'"
   	else  
   		@timeref = ""
@@ -24,14 +29,18 @@ class TalksController < ApplicationController
   		@timemax = ""
   		@conditions = ""
   	end	
+  	#if !params[:jmeno].empty?  then
+  	#	@conditions = @conditions + " and last_name == '#{params[:jmeno]}'"
+  	#end		
     @talks = Talk.find(:all, :conditions => @conditions, :order => "call_when_time DESC")
+    #render :text => @conditions
     render :partial => "index"
 
   end
   
   def ajax_respond_start_talk 
   	@talk = Talk.find(params[:id])
-  	Talk.update (@talk,	 { :start_time => Time.now })
+  	Talk.update (@talk,{ :start_time => Time.now })
   	@talk = Talk.find(params[:id])
    	render  :text => @talk.start_time.localtime.strftime("%d-%m-%Y | %H.%M.%S") ,  :layout => false
    	 
@@ -39,14 +48,14 @@ class TalksController < ApplicationController
   
   def ajax_respond_stop_talk 
   	@talk = Talk.find(params[:id])
-  	Talk.update (@talk,	 { :end_time => Time.now })
+  	Talk.update (@talk,{ :end_time => Time.now })
   	@talk = Talk.find(params[:id])
    	render  :text => @talk.end_time.localtime.strftime("%d-%m-%Y | %H.%M.%S") ,  :layout => false
    	 
   end	
   
   def ajax_respond_clear 
-  	result_string = "<p>Zadejte datum výpisu..</p>"
+  	result_string = '<span><img src="/images/ajax-loader.gif" />Vyhledávám..</span>'
   	render  :text => result_string,  :layout => false
   	#render :file => 'TimeAdd.png', :type => 'image/png',  :layout => false
   	#send_file 'public/images/TimeAdd.png', :type => 'image/png', :disposition => 'inline', :filename => "site-stats.png"
@@ -178,7 +187,8 @@ class TalksController < ApplicationController
       if @talk.update_attributes(params[:talk])
         flash[:notice] = 'Talk was successfully updated.'
         #format.html { redirect_to(@talk) }
-        format.html { render :action => "show" }
+        format.html { redirect_to :back }
+        #format.html { render :action => "show" }
         format.xml  { head :ok }
       else
         format.html { render :action => "show" }

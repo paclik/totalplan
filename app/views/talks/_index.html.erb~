@@ -1,6 +1,7 @@
 <table  width="600px" class="listtable">
 <tr>
-    <th>Kontakt</th>
+ 		<th nowrap>Nr. </th>     
+ 		<th>Kontakt</th>
     <th>Volat kdy </th>
     <th>Konec</th>
     <th>Poradna</th>
@@ -16,9 +17,18 @@
 <% @talks.each do |talk| %>
 	<% @TEXT = talk.poznamka[-200..-1] if talk.poznamka != nil %>
   <% if  @highlight =~ /\Aodd/ then @highlight = 'even' else  @highlight = 'odd' end  %>
-  
+ 
   <tr id='<%= @highlight%>'>
-    <td >
+  <td nowrap> <%= if defined?(@talks.current_page) then
+  							(i+1).to_i + (@talks.current_page.to_i - 1).to_i * 30 if defined?(@talks.current_page)
+  						else
+  							(i+1).to_i
+  						end	
+  						%>
+  						 
+  </td> 
+  <%i=i+1%>
+  <td >
      	<%= link_to talk.contact.last_name + "  " + talk.contact.first_name, talk ,{ :title =>"Editace hovoru"}  if talk.poznamka != nil %>
     </td>
    	<td>

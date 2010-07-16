@@ -1,4 +1,6 @@
 <%= will_paginate @talks , :previous_label=> "Předchozí", :next_label=> "Další"%> 
-<%= render :partial => 'filtr' %> 	
-<%= render :partial => 'index' %> 				
+<table  class="listtable">
+	<%= render :partial => 'filtr' %> 	
+	<%= render :partial => 'index' %> 	
+</table>	
 <%= will_paginate @talks , :previous_label=> "Předchozí", :next_label=> "Další"%> 

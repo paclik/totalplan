@@ -1,12 +1,13 @@
-<table width="600px" class="listtable">
+
 	<% @condition %>
 <tr id='list-filter' class="filter" >
 
 <% form_tag :controller => 'talks', :action => 'list' do %>
-	<th>Příjmení <%= text_field_tag  "contacts.last_name" , value= params["contacts.last_name"],  :size => 15 %>
+	<th> </th>
+   <th>Příjmení <%= text_field_tag  "contacts.last_name" , value= params["contacts.last_name"],  :size => 15 %>
 
 	</th>
-	<th><span>Od</span> 
+	<th colspan = 3><span>Od</span> 
 	<%= calendar_date_select_tag 'call_when_time1_d', value= params["call_when_time1_d"],  :clear_button => false, :time => false, :popup => :force, :size => 8	%> 
 	<br/><span>Do</span> 
 	<%= calendar_date_select_tag 'call_when_time2_d', value= params["call_when_time2_d"],  :clear_button => false, :time => false, :popup => :force, :size => 8 	%> 
@@ -20,10 +21,6 @@
 				<%= submit_tag 'x'%>
 	   	<%end %>   
 	</th>
-	
-	
-	
-	
 
 </tr>
-</table>
+

@@ -1,33 +1,6 @@
-<table class="listtable">
-  <tr>
-    <th>Jméno</th>
-    <th>Příjmení</th>
-    <th>Mob telefon</th>
-    <th>Pevná linka</th>
-    <th>Email</th>
-    <th>Výška</th>
-    <th>Váha</th>
-    <th>Váha</th>
-    <th>Typ</th>
-  </tr>
-<% ####   vypis jednotlivzch radku scripts  %>   
-<% ####   i = row counter %> 
-<%i=0%>
-<% @contacts.each do |contact| %>
-  <% if  @highlight =~ /\Aodd/ then @highlight = 'even' else  @highlight = 'odd' end  %>
-  
-  <tr id='<%= @highlight%>'>
-    <td><%=h contact.first_name %></td>
-    <td><%= link_to contact.last_name, contact  %>
-    <td><%=h contact.mob_phone %>
-    <td><%=h contact.land_line %></td>
-    <td><%=h contact.email %></td>
-    <td><%=h contact.height %></td>
-    <td><%=h contact.weight %></td>
-    <td><%=h contact.age %></td>
-    <td><%=h contact.body_type.type_cz if contact.body_type %></td>
-    
-  </tr>
-<% end %>
-</table>
-
+<%= will_paginate @contacts , :previous_label=> "Předchozí", :next_label=> "Další"%> 
+	<table  width="600px" class="listtable">
+		<%= render :partial => 'filtr' %> 	
+		<%= render :partial => 'index' %> 
+	</table>
+<%= will_paginate @contacts , :previous_label=> "Předchozí", :next_label=> "Další"%> 

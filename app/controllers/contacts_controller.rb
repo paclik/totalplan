@@ -18,9 +18,14 @@ class ContactsController < ApplicationController
   end 
    
   def index
-    ##@contacts = Contact.all
-    @contacts = Contact.find(:all, :conditions => ['last_name LIKE ?', "%#{params[:search]}%"])
-
+    ##@contacts = Contact.all  
+    
+    #params[:first_name]
+    #params[:first_name]
+    
+    @conditions =  ['first_name LIKE ? AND last_name LIKE ? AND ( mob_phone LIKE ? OR land_line LIKE ?)', "%#{params[:first_name]}%",  "%#{params[:last_name]}%", "%#{params[:mob_phone]}%" , "%#{params[:mob_phone]}%"] 
+    
+    @contacts = Contact.paginate :page => params[:page],:conditions =>  @conditions, :order => "last_name asc"
     @title="Přehled kontaktů"
       respond_to do |format|
       format.html # index.html.erb

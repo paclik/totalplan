@@ -4,6 +4,10 @@ class Contact < ActiveRecord::Base
   accepts_nested_attributes_for :talk
   validates_presence_of :last_name
   #validates_numericality_of :height, :weight, :age
+  
+  cattr_reader :per_page
+  @@per_page = 30
+  
 	def validate 
 		#errors.add("chyba -","Vyplnit bud mobil nebo pevna") if mob_phone.blank? && land_line.blank? 
 		#errors.add("chyba -","Vyplnit bud mobil nebo pevna") if mob_phone.blank? && land_line.blank? 

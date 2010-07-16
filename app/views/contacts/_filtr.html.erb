@@ -1,0 +1,19 @@
+<tr id='list-filter' class="filter" >
+		
+			<% form_tag request.path, :method => 'get' do %>
+			<th>
+				<%= text_field_tag :first_name, params[:first_name], {:size =>10} %>
+			</th>	
+			<th>
+				<%= text_field_tag :last_name, params[:last_name],  {:size =>10}  %>
+			</th>	
+			<th colspan = 2>
+				<%= text_field_tag :mob_phone, params[:mob_phone],  {:size =>15} %>
+			</th>	
+			<th>
+				<%= submit_tag 'Nastav filtr'%>
+			</th>	 
+			<% end %>
+		
+</tr>	
+

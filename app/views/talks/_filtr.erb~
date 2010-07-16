@@ -6,11 +6,11 @@
 	<th>Jméno <%= text_field_tag  "contacts.last_name" , value= params["contacts.last_name"],  :size => 15 %>
 
 	</th>
-	<th> <span>Od</span> 
+	<th><span>Od</span> 
 	<%= calendar_date_select_tag 'call_when_time1_d', value= params["call_when_time1_d"], :action => 'index', :clear_button => false, :time => false, :popup => :force, :size => 6, 
 					:after_close =>  remote_function(:url => {:action => :ajax_respond_date,} , :with => 'Form.serialize(this.form)', :update => 'my_list' )
 				
-	%><span>Od</span> 
+	%> <br/><span>Do</span> 
 	<%= calendar_date_select_tag 'call_when_time2_d', value= params["call_when_time2_d"],  :clear_button => false, :time => false, :popup => :force, :size => 6 	%> 
 	</th>
 	

@@ -3,7 +3,7 @@
 <tr id='list-filter' class="filter" >
 
 <% form_tag :controller => 'talks', :action => 'list' do %>
-	<th>Jméno <%= text_field_tag  "contacts.last_name" , value= params["contacts.last_name"],  :size => 15 %>
+	<th>Příjmení <%= text_field_tag  "contacts.last_name" , value= params["contacts.last_name"],  :size => 15 %>
 
 	</th>
 	<th><span>Od</span> 

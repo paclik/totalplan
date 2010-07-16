@@ -177,7 +177,7 @@ end
   		@title = "Výpis všech hovorů"
   	end	
   	#@items = Item.paginate :page => page, :order => "id desc", :conditions => @condition
-    @talks = Talk.paginate :page => page, :conditions => @conditions, :joins => [:contact], :order => "call_when_time DESC"
+    @talks = Talk.paginate :page => params[:page], :conditions => @conditions, :joins => [:contact], :order => "call_when_time DESC"
     	#render :text => @conditions
       respond_to do |format|
       format.html # index.html.erb

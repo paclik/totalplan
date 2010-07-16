@@ -19,7 +19,7 @@ class ScriptsController < ApplicationController
 	# GET /scripts
   # GET /scripts.xml
   def index
-    @scripts = Script.all
+    @scripts = Script.find  :all, :order => "name"
     @title="Výpis skriptů"
     respond_to do |format|
       format.html # index.html.erb

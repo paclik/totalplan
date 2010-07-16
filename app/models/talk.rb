@@ -4,7 +4,7 @@ class Talk < ActiveRecord::Base
 	validates_presence_of :contact_id
 	
   cattr_reader :per_page
-  @@per_page = 20
+  @@per_page = 30
 
 	
 	def contact_name

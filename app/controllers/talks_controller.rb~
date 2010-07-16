@@ -112,11 +112,7 @@ def delsearch()
 end
 
   def ajax_respond_date
-  	#"p_date_and_time"=>"22.7.2010 16:34",
-  	#sleep 2
   	
-  	#@datumlistu = Date.civil(params[:hovor][:"kdy(1i)"].to_i,params[:hovor][:"kdy(2i)"].to_i,params[:hovor][:"kdy(3i)"].to_i)
-    #result_string = @datumlistu.strftime("%d-%m-%y")
     @timeref = DateTime.new
   	if !params[:p_date_and_time].empty?  then
   		@datumlistu = DateTime.strptime(params[:p_date_and_time],'%d.%m.%Y') 
@@ -131,9 +127,7 @@ end
   		@timemax = ""
   		@conditions = ""
   	end	
-  	#if !params[:jmeno].empty?  then
-  	#	@conditions = @conditions + " and last_name == '#{params[:jmeno]}'"
-  	#end		
+  	
     @talks = Talk.find(:all, :conditions => @conditions, :order => "call_when_time DESC")
     #render :text => @conditions
     render :partial => "index"

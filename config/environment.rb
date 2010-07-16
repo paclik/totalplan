@@ -44,3 +44,5 @@ Rails::Initializer.run do |config|
   ## hack pro incompatible character encodings: UTF-8 and ASCII-8BIT nefunguje
   #Encoding.default_internal, Encoding.default_external = ['utf-8'] * 2
 end
+
+require "will_paginate"

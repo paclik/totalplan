@@ -161,7 +161,7 @@ end
   	
   def index 
   	processParams()
-  	
+  	page = params[:page] || 1
   	@timeref = DateTime.new
   	if params[:datsearch] then
   		@timeref = DateTime.strptime(params[:datsearch],'%Y-%m-%d') 
@@ -176,8 +176,8 @@ end
   		if @condition != nil then @conditions = @condition + " "  else @conditions = " " end
   		@title = "Výpis všech hovorů"
   	end	
-  	
-    @talks = Talk.find(:all, :conditions => @conditions, :joins => [:contact], :order => "call_when_time DESC")
+  	#@items = Item.paginate :page => page, :order => "id desc", :conditions => @condition
+    @talks = Talk.paginate :page => page, :conditions => @conditions, :joins => [:contact], :order => "call_when_time DESC"
     	#render :text => @conditions
       respond_to do |format|
       format.html # index.html.erb

@@ -9,14 +9,15 @@ body {
 #top_header {
   background-color: #2F3C4C;
   color: #F4EFB7;
-  font-size: 20pt;
+  font-size: 10pt;
   height: 20px;
   padding: 15px; }
-  #top_header .sub {
-    font-size: 10pt; }
-    #top_header .sub a {
-      color: #F4EFB7; }
-
+  #top_header .subtitle a {
+    font-size: 20pt;
+    text-decoration: none;
+    color:  #F4EFB7;
+  }
+  
 #main_content {
   padding: 20px; }
 

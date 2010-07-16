@@ -76,6 +76,11 @@ body {
   border-color:  #f4fcf2;
   padding: 0px; }
   
+#example3.example_content  .paginator a { 
+                    TEXT-DECORATION:underline;
+                    font-weight:bold;
+                    color:black;  
+    }
   #example_3.example_content .content_wrapper {
     background-color: #2f3c4c; 
     padding: 0px; 

@@ -44,6 +44,13 @@
 }
 
 
+#list-filter th {
+  background-color :#CCCCCC;  	;
+  border-bottom: 1px solid #fff;
+  padding-bottom: .5em;
+}
+
+
 .listtable th a:link, .listtable th a:visited {
      
      TEXT-DECORATION:underline;

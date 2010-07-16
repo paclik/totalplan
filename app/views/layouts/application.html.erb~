@@ -31,8 +31,7 @@
   
 </head>
 
-<body onload="<%= remote_function(:url => { :action => :ajax_respond_date, :p_date_and_time => '' }, :update => 'my_list') %>">
-
+<body>
 <div id='top_header'>
   <div class ='subtitle'><%= link_to " Simple Total Plan",{:controller => "talks", :action => "index", :datsearch => Date.today.strftime("%Y-%m-%d")}  %> </div>
     <div class='sub'>

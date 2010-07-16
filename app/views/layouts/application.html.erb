@@ -33,7 +33,7 @@
 
 <body>
 <div id='top_header'>
-  <div class ='subtitle'><%= link_to " Simple Total Plan",{:controller => "talks", :action => "index", :datsearch => Date.today.strftime("%Y-%m-%d")}  %> </div>
+  <div class ='subtitle'><%= link_to " Simple Total Plan",{:controller => "talks", :action => "index", :call_when_time1_d => Date.today.strftime("%d.%m.%Y")}  %> </div>
     <div class='sub'>
         by  Zdeny
     </div>

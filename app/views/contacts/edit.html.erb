@@ -46,10 +46,9 @@
   			<%= f.radio_button :state, 'Zaregistrovaný klient'%>Zaregistrovaný klient
   			<%= f.radio_button :state, 'Dlouhodobý klient'%>Dlouhodobý klient
   			<%= f.radio_button :state, 'Nemá zájem'%>Nemá zájem
+  </p>			
   <p>
- , zaregistrovaný klient, dlouhodobý klient, nemá zájem (a možná ještě nějaké stavy přibudou a/nebo se změní). Tento stav by se měl zobrazovat ve všech přehledech.
-  
-    <%= f.label :body_type_id %><br />
+     <%= f.label :body_type_id %><br />
     <%=  collection_select(:contact, :body_type_id, BodyType.all, :id, :type_cz, {:prompt => true})%>
   </p>
   <p>

@@ -7,7 +7,9 @@
   <b>Kdy zavolat:</b>
   <%=h   @talk.call_when_time.strftime("%d-%m-%Y %H.%M| Den: %a | Týden:%W") if @talk.call_when_time %>
 </p>
-
+<p>
+	<b>Stav:</b> <%=h @talk.contact.state if @talk.contact  %> 
+</p>
 <p>
   <b>Hotovo:</b>
   <%=h "Ano" if @talk.finished %>

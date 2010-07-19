@@ -2,7 +2,7 @@
 	<% @condition %>
 <tr id='list-filter' class="filter" >
 
-<% form_tag :controller => 'talks', :action => 'list' do %>
+<% form_tag ( {:controller => 'talks', :action => 'list'}, { :name => "formular"}) do %>
 	<th> </th>
    <th>Příjmení <%= text_field_tag  "contacts.last_name" , value= params["contacts.last_name"],  :size => 15 %>
 
@@ -12,7 +12,8 @@
 	<br/><span>Do</span> 
 	<%= calendar_date_select_tag 'call_when_time2_d', value= params["call_when_time2_d"],  :clear_button => false, :time => false, :popup => :force, :size => 8 	%> 
 	</th>
-	
+	<th> 
+	</th>
 	<th colspan = 6>
 	  <%= submit_tag 'Nastav filtr'%><br/>
 	  <% end  %> 

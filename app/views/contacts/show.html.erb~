@@ -42,7 +42,7 @@
 
 <div>
   <b>Body type:</b>
-  <%=h @contact.body_type.type_expl_cz %>
+  <%=h @contact.body_type.type_expl_cz  if @contact.body_type%>
 </div>
 </div>
 <div class="listtable">

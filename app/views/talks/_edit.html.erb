@@ -6,6 +6,7 @@
 	<p>
 		jméno: <b><%=h @talk.contact.first_name if @talk.contact %> </b>  
 		příjmení: <b><%=h @talk.contact.last_name if @talk.contact  %> </b>
+		stav: <b><%=h @talk.contact.state if @talk.contact  %> </b>
 	</p>	
 	
 	
@@ -18,13 +19,12 @@
 	<tr> 
 			<td colspan="3" >
 			  <%= f.label :Výsledek_hovoru %><br />
-		
 				<%= f.radio_button :result, 'Nebere'%> Nebere
-  			<%= radio_button('talk', 'result', 'Zavěsil')%>Zavěsil
-  			<%= radio_button('talk', 'result', 'Nedostupný')%>Nedostupný
-  			<%= radio_button('talk', 'result', 'Schránka')%>Schránka
-  			<%= radio_button('talk', 'result', 'Omyl')%>Omyl
-  			<%= radio_button('talk', 'result', 'Nemá zájem')%>Nemá zájem
+  			<%= f.radio_button :result, 'Zavěsil'%>Zavěsil
+  			<%= f.radio_button :result, 'Nedostupný'%>Nedostupný
+  			<%= f.radio_button :result,'Schránka'%>Schránka
+  			<%= f.radio_button :result, 'Omyl'%>Omyl
+  			<%= f.radio_button :result, 'Nemá zájem'%>Nemá zájem
 			</td>	
 			
 		</tr>	

@@ -33,7 +33,22 @@
     <%= f.label :age %><br />
     <%= f.text_field :age %>
   </p>
+  <p >
+			  <%= f.label :Stav_kontaktu %><br />
+		
+				<%= f.radio_button :state, 'Zájemce'%> Zájemce
+  			<%= f.radio_button :state, 'Zájemce po poradně'%>Zájemce po poradně
+  			<%= f.radio_button :state, 'Zájemce s analýzou'%>Zájemce s analýzou
+  			<%= f.radio_button :state, 'Opakovaný účastník poradny'%>Opakovaný účastník poradny
+  			<%= f.radio_button :state, 'Nový klient'%>Nový klient
+  			<%= f.radio_button :state, 'Opakovaný klient'%>Opakovaný klient
+  			<%= f.radio_button :state, 'Klient s dohodou'%> Klient s dohodou
+  			<%= f.radio_button :state, 'Zaregistrovaný klient'%>Zaregistrovaný klient
+  			<%= f.radio_button :state, 'Dlouhodobý klient'%>Dlouhodobý klient
+  			<%= f.radio_button :state, 'Nemá zájem'%>Nemá zájem
   <p>
+ , zaregistrovaný klient, dlouhodobý klient, nemá zájem (a možná ještě nějaké stavy přibudou a/nebo se změní). Tento stav by se měl zobrazovat ve všech přehledech.
+  
     <%= f.label :body_type_id %><br />
     <%=  collection_select(:contact, :body_type_id, BodyType.all, :id, :type_cz, {:prompt => true})%>
   </p>

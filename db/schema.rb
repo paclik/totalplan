@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100708120419) do
+ActiveRecord::Schema.define(:version => 20100719143215) do
 
   create_table "body_types", :force => true do |t|
     t.string   "type_cz"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(:version => 20100708120419) do
     t.integer  "body_type_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.text     "state"
   end
 
   create_table "scripts", :force => true do |t|

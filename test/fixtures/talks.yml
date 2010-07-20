@@ -1,6 +1,6 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-one:
+on:
   contact_id: 1
   call_when_time: 2010-06-11 14:03:26
   finished: false
@@ -9,7 +9,7 @@ one:
   informace_zajem: false
   poznamka: MyText
 
-two:
+tw:
   contact_id: 1
   call_when_time: 2010-06-11 14:03:26
   finished: false
@@ -17,3 +17,5 @@ two:
   poradna_when: 2010-06-11
   informace_zajem: false
   poznamka: MyText
+  
+ 

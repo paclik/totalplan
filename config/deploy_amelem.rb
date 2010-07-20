@@ -6,8 +6,8 @@ role :web, "server3.railshosting.cz"
 role :app, "server3.railshosting.cz"
 role :db,  "server3.railshosting.cz", :primary => true
 
-set :deploy_to, "/home/totalplan/app/"
-set :user, "totalplan"
+set :deploy_to, "/home/amelem/app/"
+set :user, "amelem"
 
 set :use_sudo, false
 

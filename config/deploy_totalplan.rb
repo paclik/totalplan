@@ -1,5 +1,5 @@
 set :application, "totalplan"
-set :repository, "git://github.com/paclik/amelem.git" 
+set :repository, "git://github.com/paclik/totalplan.git" 
 set :scm, "git"
 
 role :web, "server3.railshosting.cz"

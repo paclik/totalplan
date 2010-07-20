@@ -162,6 +162,8 @@ end
   def index 
   	processParams()
   	page = params[:page] || 1
+  	DateTime.strptime(params[:call_when_time1_d],'%d.%m.%Y') 
+  	
   	@timeref = DateTime.new
   	if params[:datsearch] then
   		@timeref = DateTime.strptime(params[:datsearch],'%Y-%m-%d') 
